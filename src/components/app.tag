@@ -16,7 +16,7 @@
       </route>
     </router>
   </div>
-  <Footer />
+  <Bottom />
   <script type="es6">
   </script>
 </app>
