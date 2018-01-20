@@ -4,16 +4,16 @@ module.exports = function (config) {
     browsers: ['Electron'],
     frameworks: ['mocha', 'chai', 'riot'],
     files: [
-      '../dist/dashboard.js',
-      'e2e/*.test.js'
+      '../src/**/*.tag',
+      '*.test.js'
     ],
     reporters: ['progress', 'coverage'],
     preprocessors: {
-      '../dist/dashboard.js': ['coverage']
+      '../src/**/*.tag': ['riot']
     },
     coverageReporter: {
       reporters: [
-        { type:'lcovonly', dir : '../coverage/' }
+        { type: 'lcovonly', dir : '../coverage/' }
       ]
     },
     colors: true,

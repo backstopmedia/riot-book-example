@@ -7,10 +7,10 @@ describe('service-card tag', function() {
     const card = document.querySelector('service-card')
     if (card)
       card.remove()
-    document.appendChild(document.createElement('service-card'))
+    document.body.appendChild(document.createElement('service-card'))
     riot.mount('service-card')
   })
   it('should contain header', function() {
-    expect(document.querySelector('h1')).not.to.be.an('undefined')
+    expect(document.querySelector('h1')).not.to.be.null
   })
 })
