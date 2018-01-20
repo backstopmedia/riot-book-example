@@ -1,3 +1,6 @@
 @import '~bulmaswatch/superhero/_variables.scss';
 @import '~bulma';
 @import '~bulmaswatch/superhero/_overrides.scss';
+
+@import './components/app.scss';
+@import './components/header.scss';

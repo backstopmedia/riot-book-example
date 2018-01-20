@@ -67,6 +67,7 @@
     "node-sass": "^4.7.2",
     "raw-loader": "^0.5.1",
     "riot": "^3.8.1",
+    "riot-placeholder": "^1.0.4",
     "riot-route": "^3.1.2",
     "riot-tag-loader": "^2.0.2",
     "sass-loader": "^6.0.6",

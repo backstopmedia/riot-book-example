@@ -1,6 +1,6 @@
 <app>
   <Header />
-  <div class="container">
+  <div class="wrapper">
     <router>
       <route path="">
         <Home />
@@ -15,8 +15,8 @@
         <Deployments />
       </route>
     </router>
-    <Footer />
   </div>
+  <Footer />
   <script type="es6">
   </script>
 </app>
