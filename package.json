@@ -1,0 +1,80 @@
+{
+  "name": "riot-book-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/serve",
+    "build": "npm run lint && npm run bundle && npm run test:e2e",
+    "bundle": "node_modules/.bin/webpack --config webpack.config.js",
+    "lint:js": "node_modules/.bin/eslint src/**.js",
+    "lint:tags": "node_modules/.bin/eslint src/**.tag",
+    "lint": "npm run lint:js && npm run lint:tags",
+    "test:e2e": "node_modules/.bin/karma start test/karma.conf.js",
+    "test": "npm run lint && npm run test:e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neetjn/riot-book-example.git"
+  },
+  "keywords": [
+    "riot",
+    "riotjs",
+    "example",
+    "boilerplate",
+    "app",
+    "javascript",
+    "node"
+  ],
+  "author": "",
+  "contributors": [
+    {
+      "name": "John Nolette",
+      "email": "john@neetgroup.net",
+      "url": "https://github.com/neetjn"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neetjn/riot-book-example/issues"
+  },
+  "homepage": "https://github.com/neetjn/riot-book-example#readme",
+  "devDependencies": {
+    "animejs": "^2.2.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "bulma": "^0.6.2",
+    "bulmaswatch": "^0.5.2",
+    "chai": "^4.1.2",
+    "css-loader": "^0.28.9",
+    "electron": "^1.7.10",
+    "eslint": "4.1.1",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-riot": "0.1.7",
+    "express": "^4.16.2",
+    "file-loader": "^1.1.6",
+    "font-awesome": "^4.7.0",
+    "html-webpack-plugin": "^2.30.1",
+    "karma": "^2.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^1.1.1",
+    "karma-electron": "^5.2.2",
+    "karma-mocha": "^1.3.0",
+    "karma-riot": "^2.0.0",
+    "mocha": "^5.0.0",
+    "node-sass": "^4.7.2",
+    "raw-loader": "^0.5.1",
+    "riot": "^3.8.1",
+    "riot-tag-loader": "^2.0.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.11.0",
+    "webpack-hot-middleware": "^2.21.0",
+    "webpack-html-plugin": "^0.1.1"
+  }
+}
