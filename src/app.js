@@ -11,5 +11,7 @@ import './routes/home.tag'
 import './routes/oversight.tag'
 import './routes/services.tag'
 import './routes/deployments.tag'
+import './routes/about.tag'
+import './routes/help.tag'
 
 riot.mount('app')

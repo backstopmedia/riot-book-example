@@ -1,0 +1,6 @@
+Sidebar {
+  @include shadow(3);
+  border-bottom: 1px solid red;
+  display: block;
+  background-color: $notification-background-color;
+}
