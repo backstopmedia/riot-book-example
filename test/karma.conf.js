@@ -7,14 +7,9 @@ module.exports = function (config) {
       '../src/**/*.tag',
       '*.test.js'
     ],
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
     preprocessors: {
       '../src/**/*.tag': ['riot']
-    },
-    coverageReporter: {
-      reporters: [
-        { type: 'lcovonly', dir : '../coverage/' }
-      ]
     },
     colors: true,
     logLevel: config.LOG_INFO,

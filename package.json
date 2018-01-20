@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node scripts/serve",
     "build": "npm run lint && npm run bundle && npm run test:e2e",
     "bundle": "node_modules/.bin/webpack --config webpack.config.js",
     "lint:js": "node_modules/.bin/eslint src/**.js",
@@ -52,6 +53,7 @@
     "eslint": "4.1.1",
     "eslint-loader": "1.6.1",
     "eslint-plugin-riot": "0.1.7",
+    "express": "^4.16.2",
     "file-loader": "^1.1.6",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",
@@ -72,6 +74,7 @@
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.4",
     "webpack-dev-server": "^2.11.0",
+    "webpack-hot-middleware": "^2.21.0",
     "webpack-html-plugin": "^0.1.1"
   }
 }

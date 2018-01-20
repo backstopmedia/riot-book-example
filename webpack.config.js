@@ -6,7 +6,7 @@ module.exports = {
   entry: './app.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    publicPath: 'dist/',
+    publicPath: '/dist/',
     filename: 'dashboard.js',
     libraryTarget: 'umd',
     umdNamedDefine: true
