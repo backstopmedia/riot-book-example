@@ -9,6 +9,7 @@ import './components/service-card.tag'
 import './components/services-cpu-card.tag'
 import './components/header.tag'
 import './components/bottom.tag'
+import './components/deploy-table.tag'
 import './routes/home.tag'
 import './routes/oversight.tag'
 import './routes/services.tag'
@@ -17,8 +18,10 @@ import './routes/about.tag'
 import './routes/help.tag'
 
 import Tracker from './services/tracker.js'
+import Deployments from './services/deployments.js'
 
 riot.mixin({ tracker: new Tracker(riot) })
+riot.mixin({ deploys: new Deployments(riot) })
 riot.mount('app')
 
 window.riot = riot

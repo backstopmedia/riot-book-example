@@ -15,6 +15,9 @@ module.exports = {
     new webpack.ProvidePlugin({
       riot: 'riot'
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    }),
     new htmlWebpackPlugin({
       template: 'index.html',
       inject: 'body'
