@@ -29,7 +29,7 @@ The application is served on port 8080.
 ### Docker
 
 ```bash
-docker build . -t bashboard
+docker build . -t dashboard
 docker run --rm -p 8080:8080 dashboard
 ```
 
