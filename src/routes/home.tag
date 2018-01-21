@@ -35,10 +35,8 @@
     </div>
   </div>
   <script type="es6">
-    this.view = 'oversight'
-
     isView = function(view) {
-      return this.view == view
+      return (this.view || 'oversight') == view
     }
 
     setView = function(view) {
