@@ -2,8 +2,9 @@
   <div class="container">
     <canvas ref="chart" style="max-width: 25rem; max-height: 25rem;"></canvas>
   </div>
-  <script>
+  <script type="es6">
     import Chart from 'chart.js'
+
     this.on('mount', function() {
       const ctx = this.refs.chart.getContext('2d')
       const cpuChart = new Chart(ctx, {

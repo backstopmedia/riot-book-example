@@ -4,12 +4,12 @@ module.exports = function (config) {
     browsers: ['Electron'],
     frameworks: ['mocha', 'chai', 'riot'],
     files: [
-      '../src/**/*.tag',
+      '../src/components/*.tag',
       '*.test.js'
     ],
     reporters: ['progress'],
     preprocessors: {
-      '../src/**/*.tag': ['riot']
+      '../src/components/*.tag': ['riot']
     },
     colors: true,
     logLevel: config.LOG_INFO,
