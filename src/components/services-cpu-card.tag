@@ -38,9 +38,6 @@
           bg = 'maroon'
         cpuChart.data.datasets[0].backgroundColor.push(bg)
       })
-      /*dataset.data.forEach((data, index) => {
-
-      })*/
       cpuChart.update()
     })
   </script>
