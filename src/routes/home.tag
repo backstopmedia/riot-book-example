@@ -22,6 +22,20 @@
                  click={ () => setView('deployments') }>
                  Deployments</a>
             </li>
+            <p class="menu-label">
+              Tools
+            </p>
+            <ul class="menu-list">
+              <li>
+                <a class="">Development</a>
+                <ul>
+                  <li>
+                    <button class="button is-primary"
+                            click={ mock }>Randomize</button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </ul>
         </aside>
       </sidebar>
@@ -33,12 +47,21 @@
     </div>
   </div>
   <script type="es6">
-    isView = function(view) {
-      return (this.view || 'oversight') == view
+    import generate from '../util/mock'
+
+    self = this
+
+    // # install mock mixin
+    self.mock = function() {
+      self.tracker.update(generate())
+    }
+    self.isView = function(view) {
+      return (self.view || 'oversight') == view
+    }
+    self.setView = function(view) {
+      self.view = view
     }
 
-    setView = function(view) {
-      this.view = view
-    }
+    self.mock()
   </script>
 </Home>

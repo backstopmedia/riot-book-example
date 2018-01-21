@@ -10,7 +10,7 @@
               </h1>
               <hr />
               <div class="box">
-                <ServicesCPUCard services="{ alerts }" />
+                <ServicesCPUCard services={ alerts } />
               </div>
             </div>
           </div>
@@ -51,8 +51,13 @@
   </div>
   <script type="es6">
     import time from '../mixins/time'
+
+    const self = this
+    self.on('update', function() {
+      self.alerts = self.tracker.alert()
+    })
+    self.alerts = self.tracker.alert()
     // # local mixin example
-    this.mixin(time)
-    this.alerts = this.tracker.alert()
+    self.mixin(time)
   </script>
 </Oversight>

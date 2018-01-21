@@ -53,7 +53,7 @@ const services = [
     }
 
  */
-export default function() {
+export default function generate() {
   const hour = 36e2
   const day = hour * 24
 

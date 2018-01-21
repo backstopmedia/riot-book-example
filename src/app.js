@@ -14,8 +14,7 @@ import './routes/deployments.tag'
 import './routes/about.tag'
 import './routes/help.tag'
 
-import mock from './utils/mock.js'
-import Tracker from './mixins/tracker.js'
+import Tracker from './services/tracker.js'
 
-riot.mixin({ tracker: new Tracker(riot, mock()) })
+riot.mixin({ tracker: new Tracker(riot) })
 riot.mount('app')

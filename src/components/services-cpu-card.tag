@@ -4,16 +4,18 @@
   </div>
   <script type="es6">
     import Chart from 'chart.js'
-    // # note: script is actually processed before the tag is mounted
-    this.on('mount', function() {
-      const ctx = this.refs.chart.getContext('2d')
+
+    const self = this
+
+    function drawChart() {
+      const ctx = self.refs.chart.getContext('2d')
       const cpuChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: this.opts.services.map(service => service.name),
+          labels: self.opts.services.map(service => service.name),
           datasets: [{
             label: 'CPU Spikes',
-            data: this.opts.services.map(service => {
+            data: self.opts.services.map(service => {
               return Math.max(...service.metrics.map(metric => metric.cpu))
             }),
             backgroundColor: [],
@@ -39,6 +41,13 @@
         cpuChart.data.datasets[0].backgroundColor.push(bg)
       })
       cpuChart.update()
+    }
+
+    self.on('mount', function() {
+      drawChart()
+    })
+    self.on('update', function() {
+      drawChart()
     })
   </script>
 </ServicesCPUCard>
