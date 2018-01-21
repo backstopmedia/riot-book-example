@@ -3,7 +3,11 @@ Bottom {
   position: relative;
   display: block;
   & > footer {
+    height: 10rem;
     z-index: 1000;
+    & .container {
+      margin-top: -1.5rem;
+    }
     & img#riot {
       width: 5rem;
     }

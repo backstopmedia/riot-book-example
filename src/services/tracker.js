@@ -44,4 +44,14 @@ export default class Tracker {
     })
   }
 
+  /**
+   * Search for service by field.
+   * @returns {Array}
+   */
+  search(name) {
+    return this.services.filter(service => {
+      return service.name.indexOf(name) !== -1
+    })
+  }
+
 }
