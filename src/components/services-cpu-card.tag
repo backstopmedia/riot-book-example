@@ -4,7 +4,7 @@
   </div>
   <script type="es6">
     import Chart from 'chart.js'
-
+    // # note: script is actually processed before the tag is mounted
     this.on('mount', function() {
       const ctx = this.refs.chart.getContext('2d')
       const cpuChart = new Chart(ctx, {

@@ -44,7 +44,7 @@
         active: false
       }
     ]
-
+    // # router middleware to track active route
     route(function(target, action, params) {
       if (self.routes) {
         let previous = self.routes.find(r => r.active)

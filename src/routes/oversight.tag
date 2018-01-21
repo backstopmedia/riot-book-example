@@ -51,6 +51,7 @@
   </div>
   <script type="es6">
     import time from '../mixins/time'
+    // # local mixin example
     this.mixin(time)
     this.alerts = this.tracker.alert()
   </script>
