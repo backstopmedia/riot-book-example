@@ -26,7 +26,7 @@
                     <tr each={service in alerts}>
                       <td>{ service.name }</td>
                       <td>{ this.tracker.average(service).cpu } %</td>
-                      <td>{ service.uptime }</td>
+                      <td>{ this.secondsToMinutes(this.service.uptime) } min</td>
                     </tr>
                   </tbody>
                 </table>
@@ -38,6 +38,9 @@
     </div>
   </div>
   <script type="es6">
+    import time from '../mixins/time'
+    this.mixin(time)
+    console.log(this)
     this.alerts = this.tracker.alert()
   </script>
 </Oversight>
