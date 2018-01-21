@@ -1,8 +1,20 @@
 <Oversight>
-  <div class="container">
+  <div class="container is-fluid">
     <div class="columns">
       <div class="column is-7">
-        <ServicesCard services="{ alerts }" />
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container is-fluid">
+              <h1 class="title">
+                Unhealthy Services
+              </h1>
+              <hr />
+              <div class="box">
+                <ServicesCPUCard services="{ alerts }" />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <div class="column is-5">
         <section class="hero">
@@ -40,7 +52,6 @@
   <script type="es6">
     import time from '../mixins/time'
     this.mixin(time)
-    console.log(this)
     this.alerts = this.tracker.alert()
   </script>
 </Oversight>

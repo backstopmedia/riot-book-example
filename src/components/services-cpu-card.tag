@@ -1,4 +1,4 @@
-<ServicesCard>
+<ServicesCPUCard>
   <div class="container">
     <canvas ref="chart" style="max-width: 25rem; max-height: 25rem;"></canvas>
   </div>
@@ -6,7 +6,7 @@
     import Chart from 'chart.js'
     this.on('mount', function() {
       const ctx = this.refs.chart.getContext('2d')
-      const cpuMaxChart = new Chart(ctx, {
+      const cpuChart = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: this.opts.services.map(service => service.name),
@@ -15,9 +15,7 @@
             data: this.opts.services.map(service => {
               return Math.max(...service.metrics.map(metric => metric.cpu))
             }),
-            backgroundColor: 'orange',
-            borderColor: 'orange',
-            borderWidth: 1
+            backgroundColor: [],
           }]
         },
         options: {
@@ -31,6 +29,18 @@
           }
         }
       })
+      cpuChart.data.datasets[0].data.forEach((data) => {
+        let bg = 'green'
+        if (data > 50)
+          bg = 'orange'
+        if (data > 80)
+          bg = 'maroon'
+        cpuChart.data.datasets[0].backgroundColor.push(bg)
+      })
+      /*dataset.data.forEach((data, index) => {
+
+      })*/
+      cpuChart.update()
     })
   </script>
-</ServicesCard>
+</ServicesCPUCard>

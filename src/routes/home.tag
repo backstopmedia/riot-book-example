@@ -1,6 +1,6 @@
 <Home>
   <div class="columns">
-    <div class="column is-2">
+    <div class="column is-2 is-hidden-mobile">
       <sidebar>
         <aside class="menu">
           <p class="menu-label">
@@ -27,11 +27,9 @@
       </sidebar>
     </div>
     <div class="column is-9">
-      <div class="container">
-        <Oversight if={ isView('oversight') } />
-        <Services if={ isView('services') } />
-        <Deployments if={ isView('deployments') } />
-      </div>
+      <Oversight if={ isView('oversight') } />
+      <Services if={ isView('services') } />
+      <Deployments if={ isView('deployments') } />
     </div>
   </div>
   <script type="es6">
