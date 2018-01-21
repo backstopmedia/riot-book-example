@@ -77,7 +77,7 @@ export default function() {
       }).reverse() // # order from earliest to latest
     }
     // # generate random builds
-    builds = 0
+    let builds = 0
     service.builds = [... Array(randomInt(5))].map(() => {
       return {
         build: ++builds,

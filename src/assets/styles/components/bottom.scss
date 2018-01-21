@@ -4,5 +4,8 @@ Bottom {
   display: block;
   & > footer {
     z-index: 1000;
+    & img#riot {
+      width: 5rem;
+    }
   }
 }

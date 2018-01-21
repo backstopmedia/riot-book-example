@@ -3,7 +3,12 @@
     <div class="container has-text-centered">
       <ul>
         <li>
-          <strong>Riot.js</strong> dashboard by <a href="https://github.com/neetjn">John Nolette</a>.
+          <a>
+            <img id="riot" src={riotImg}></img>
+          </a>
+        </li>
+        <li>
+          <strong>Dashboard</strong> by <a href="https://github.com/neetjn">John Nolette</a>.
         </li>
         <li>
           <small>
@@ -18,4 +23,7 @@
       </ul>
     </div>
   </footer>
+  <script type="es6">
+    this.riotImg = require('../assets/images/riot.svg')
+  </script>
 </Bottom>

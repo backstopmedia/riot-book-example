@@ -20,15 +20,27 @@ export default class Tracker {
     this.trigger('update')
   }
 
+  /**
+   * Find services that had a cpu spike over 30%.
+   * @returns {Array}
+   */
   alert() {
-    return this.service.find(service => {
-
+    return this.services.find(service => {
+      return service.metrics.some(metric => {
+        return metric.cpu > 30
+      })
     })
   }
 
+  /**
+   * Find services that had a cpu spike over 50%.
+   * @returns {Array}
+   */
   critical() {
     return this.services.find(service => {
-      let found =
+      return service.metrics.some(metric => {
+        return metric.cpu > 50
+      })
     })
   }
 
