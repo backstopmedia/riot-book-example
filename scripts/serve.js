@@ -20,4 +20,4 @@ app.get('*', function(req, res) {
   res.send(htmlBuffer.toString())
 })
 
-app.listen(8080, 'localhost')
+app.listen(8080, '0.0.0.0')
