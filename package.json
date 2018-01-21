@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node scripts/serve",
-    "build": "npm run lint && npm run bundle && npm run test:e2e",
+    "build": "npm run lint && npm run bundle && npm run test:unit",
     "bundle": "node_modules/.bin/webpack --config webpack.config.js",
     "lint:js": "node_modules/.bin/eslint src/**.js",
     "lint:tags": "node_modules/.bin/eslint src/**.tag",
     "lint": "npm run lint:js && npm run lint:tags",
-    "test:e2e": "node_modules/.bin/karma start test/karma.conf.js",
-    "test": "npm run lint && npm run test:e2e"
+    "test:unit": "node_modules/.bin/karma start test/karma.conf.js",
+    "test": "npm run lint && npm run test:unit"
   },
   "repository": {
     "type": "git",
