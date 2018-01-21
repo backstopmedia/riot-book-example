@@ -23,7 +23,7 @@
     </div>
   </nav>
   <script type="es6">
-    import router from 'riot-route'
+    import route from 'riot-route'
 
     const self = this
 
@@ -45,12 +45,14 @@
       }
     ]
 
-    router(function(target, action, params) {
-      let previous = self.routes.find(r => r.active)
-      if (previous)
-        previous.active = false
-      self.routes.find(r => r.name == target).active = true
-      self.update()
+    route(function(target, action, params) {
+      if (self.routes) {
+        let previous = self.routes.find(r => r.active)
+        if (previous)
+          previous.active = false
+        self.routes.find(r => r.name == target).active = true
+        self.update()
+      }
     })
   </script>
 </Header>

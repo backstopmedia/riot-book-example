@@ -1,5 +1,14 @@
 <Oversight>
-  <h1>Oversight</h1>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8">
+        <h1>graphics</h1>
+      </div>
+      <div class="column is-4">
+        <h1>selection box</h1>
+      </div>
+    </div>
+  </div>
   <script type="es6">
   </script>
 </Oversight>

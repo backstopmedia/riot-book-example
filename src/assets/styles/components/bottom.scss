@@ -1,4 +1,8 @@
 Bottom {
   @include shadow(3);
+  position: relative;
   display: block;
+  & > footer {
+    z-index: 1000;
+  }
 }

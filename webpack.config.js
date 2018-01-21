@@ -29,7 +29,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(js|tag)$/,
+        test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
