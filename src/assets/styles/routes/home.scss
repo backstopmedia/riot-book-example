@@ -3,7 +3,7 @@ Home {
     @include shadow(1);
     width: 16%;
     display: block;
-    position: fixed;
+    position: absolute;
     min-height: 100vh;
     padding: 1rem;
     background-color: darken($grey-dark, 5);

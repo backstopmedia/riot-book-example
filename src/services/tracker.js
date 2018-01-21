@@ -25,8 +25,8 @@ export default class Tracker {
    * @returns {Array}
    */
   alert() {
-    return this.services.find(service => {
-      return service.metrics.some(metric => {
+    return this.services.filter(service => {
+      return service.metrics.find(metric => {
         return metric.cpu > 30
       })
     })
@@ -37,8 +37,8 @@ export default class Tracker {
    * @returns {Array}
    */
   critical() {
-    return this.services.find(service => {
-      return service.metrics.some(metric => {
+    return this.services.filter(service => {
+      return service.metrics.find(metric => {
         return metric.cpu > 50
       })
     })

@@ -5,5 +5,6 @@
   <script>
     import Chart from 'chart.js'
     console.log(Chart)
+    console.log(this.opts.services)
   </script>
 </ServicesCard>
