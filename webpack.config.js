@@ -1,5 +1,6 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   context: path.join(__dirname, '/src'),
@@ -8,10 +9,12 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     publicPath: '/dist/',
     filename: 'dashboard.js',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    libraryTarget: 'umd'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      riot: 'riot'
+    }),
     new htmlWebpackPlugin({
       template: 'index.html',
       inject: 'body'
@@ -29,7 +32,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(js|tag)$/,
+        test: /\.(js)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -56,7 +59,7 @@ module.exports = {
       },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.(png|jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'url-loader' },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' }
+      { test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' }
     ]
   }
 }

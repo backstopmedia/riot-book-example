@@ -1,3 +1,5 @@
-<service-card>
-  <h1>service card</h1>
-</service-card>
+<ServiceCard>
+  <h1>{ opts.service.name }</h1>
+  <script type="es6">
+  </script>
+</ServiceCard>
