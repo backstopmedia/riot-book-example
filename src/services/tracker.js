@@ -55,7 +55,9 @@ export default class Tracker {
   }
 
   /**
-   * Compose metric and build averages
+   * Compose metric and build averages.
+   * @param {Object} service - Service to target.
+   * @returns {Object}
    */
   average(service) {
     function sum(a, b) { return a + b }
