@@ -1,5 +1,6 @@
 import riot from 'riot'
 import 'riot-route/lib/tag'
+import 'riot-tag-loader!riot-placeholder/riot-placeholder.tag'
 
 import './assets/styles/main.scss'
 import './components/app.tag'
@@ -18,3 +19,5 @@ import Tracker from './services/tracker.js'
 
 riot.mixin({ tracker: new Tracker(riot) })
 riot.mount('app')
+
+window.riot = riot

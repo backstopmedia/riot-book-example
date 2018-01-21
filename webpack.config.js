@@ -1,5 +1,6 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   context: path.join(__dirname, '/src'),
@@ -8,10 +9,12 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     publicPath: '/dist/',
     filename: 'dashboard.js',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    libraryTarget: 'umd'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      riot: 'riot'
+    }),
     new htmlWebpackPlugin({
       template: 'index.html',
       inject: 'body'

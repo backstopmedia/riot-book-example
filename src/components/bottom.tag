@@ -4,7 +4,7 @@
       <ul>
         <li>
           <a>
-            <img id="riot" src={riotImg}></img>
+            <img id="riotLogo" src={riotImg}></img>
           </a>
         </li>
         <li>
