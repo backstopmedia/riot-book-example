@@ -54,3 +54,7 @@ To run all tests:
 ```bash
 npm test
 ```
+
+---
+
+Copyright (c) 2017 John Nolette, Bleeding Edge Press Licensed under the MIT license.
