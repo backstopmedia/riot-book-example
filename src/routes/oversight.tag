@@ -1,5 +1,14 @@
 <Oversight>
   <div class="container is-fluid">
+    <!-- can be animated -->
+    <div class="tile is-parent" if={ updated }>
+      <article class="tile is-child notification is-primary">
+        <div class="content">
+          <p class="title">Last Updated</p>
+          <p class="subtitle">{ updated }</p>
+        </div>
+      </article>
+    </div>
     <div class="columns">
       <div class="column is-7">
         <section class="hero">
@@ -55,7 +64,8 @@
     const self = this
     self.on('update', function() {
       self.alerts = self.tracker.alert()
-    })
+      self.updated = new Date().toLocaleString()
+    }) // # when update triggerred by mixin service
     self.alerts = self.tracker.alert()
     // # local mixin example
     self.mixin(time)
