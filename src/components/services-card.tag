@@ -1,48 +1,36 @@
 <ServicesCard>
   <div class="container">
-    <canvas ref="chart" style="max-width: 30rem; max-height: 30rem;"></canvas>
+    <canvas ref="chart" style="max-width: 25rem; max-height: 25rem;"></canvas>
   </div>
   <script>
     import Chart from 'chart.js'
     this.on('mount', function() {
       var ctx = this.refs.chart.getContext('2d');
       var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-              datasets: [{
-                  label: '# of Votes',
-                  data: [12, 19, 3, 5, 2, 3],
-                  backgroundColor: [
-                      'rgba(255, 99, 132, 0.2)',
-                      'rgba(54, 162, 235, 0.2)',
-                      'rgba(255, 206, 86, 0.2)',
-                      'rgba(75, 192, 192, 0.2)',
-                      'rgba(153, 102, 255, 0.2)',
-                      'rgba(255, 159, 64, 0.2)'
-                  ],
-                  borderColor: [
-                      'rgba(255,99,132,1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-            responsive: true,
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero:true
-                      }
-                  }]
+        type: 'bar',
+        data: {
+          labels: this.opts.services.map(service => service.name),
+          datasets: [{
+            label: 'CPU Spikes',
+            data: this.opts.services.map(service => {
+              return Math.max(...service.metrics.map(metric => metric.cpu))
+            }),
+            backgroundColor: 'orange',
+            borderColor: 'orange',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero:true
               }
+            }]
           }
-      });
+        }
+      })
     })
   </script>
 </ServicesCard>
