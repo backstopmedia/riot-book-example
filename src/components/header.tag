@@ -15,8 +15,8 @@
       </div>
       <div class="navbar-end">
         <a class="navbar-item" href="https://github.com/backstopmedia/riot-book-example" target="_blank">
-          <span class="social">
-            <i class="fa fa-github"></i>
+          <span class="icon is-large">
+            <i class="fa fa-2x fa-github"></i>
           </span>
         </a>
       </div>
