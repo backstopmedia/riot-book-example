@@ -5,8 +5,8 @@
   <script>
     import Chart from 'chart.js'
     this.on('mount', function() {
-      var ctx = this.refs.chart.getContext('2d');
-      var myChart = new Chart(ctx, {
+      const ctx = this.refs.chart.getContext('2d')
+      const cpuMaxChart = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: this.opts.services.map(service => service.name),

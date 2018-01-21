@@ -7,7 +7,7 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-start">
-        <virtual @each={route in routes}>
+        <virtual each={route in routes}>
           <a class="navbar-item is-tab {is-active: route.active}" href='#{ route.name }'>
             { route.label }
           </a>

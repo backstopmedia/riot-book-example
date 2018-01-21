@@ -54,4 +54,19 @@ export default class Tracker {
     })
   }
 
+  /**
+   * Compose metric and build averages
+   */
+  average(service) {
+    function sum(a, b) { return a + b }
+    return {
+      cpu: Math.floor(service.metrics.map(metric => {
+        return metric.cpu
+      }).reduce(sum) / service.metrics.length),
+      buildTime: Math.floor(service.builds.map(build => {
+        return build.time
+      }).reduce(sum) / service.builds.length)
+    }
+  }
+
 }

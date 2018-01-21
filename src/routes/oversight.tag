@@ -1,11 +1,39 @@
 <Oversight>
   <div class="container">
     <div class="columns">
-      <div class="column is-8">
+      <div class="column is-7">
         <ServicesCard services="{ alerts }" />
       </div>
-      <div class="column is-4">
-        <h1>selection box</h1>
+      <div class="column is-5">
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container is-fluid">
+              <h1 class="title">
+                Control Panel
+              </h1>
+              <h2 class="subtitle">
+                Stats
+              </h2>
+              <div class="box">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th><abbr title="Average CPU Usage">CPU</abbr></th>
+                      <th>Uptime</th>
+                  </thead>
+                  <tbody>
+                    <tr each={service in alerts}>
+                      <td>{ service.name }</td>
+                      <td>{ this.tracker.average(service).cpu } %</td>
+                      <td>{ service.uptime }</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
