@@ -1,4 +1,6 @@
 <DeployTable>
+
+  Service: <input name="service" onkeyup={ edit } placeholder="Try Media"/>
   <table class="table">
     <thead>
       <tr>
@@ -8,13 +10,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr each="{ deploy in opts.deploys }">
-        <td>{ deploy.service }</td>
-        <td>{ deploy.minutes } minutes(s)</td>
-        <td>{ deploy.success ? 'Success' : 'Fail' }</td>
+      <tr each="{ item in list }">
+        <td>{ item.service }</td>
+        <td>{ item.minutes } minutes(s)</td>
+        <td>{ item.success ? 'Success' : 'Fail' }</td>
       </tr>
     </tbody>
   </table>
+
   <script type="es6">
+
+    const self = this
+    self.list = self.deploys.list
+
+    self.edit = function(e) {
+      self.list = self.deploys.search(e.target.value)
+    }
+
   </script>
 </DeployTable>

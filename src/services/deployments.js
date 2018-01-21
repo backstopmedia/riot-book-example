@@ -23,5 +23,8 @@ export default class Deployments {
     }.bind(this));
   }
 
+  search(txt) {
+    return this.list.filter(item => item.service.toLowerCase().search(txt.toLowerCase()) != -1)
+  }
 }
 
