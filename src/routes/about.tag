@@ -1,3 +1,4 @@
 <About>
-  <h1>About</h1>
+  <h1 data-is="ph"></h1>
+  <p data-is="ph" size="lg"></p>
 </About>

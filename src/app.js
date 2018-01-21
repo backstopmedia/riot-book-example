@@ -1,5 +1,6 @@
 import riot from 'riot'
 import 'riot-route/lib/tag'
+// # could do a regular import but would have to use expose loader on riot
 import 'riot-tag-loader!riot-placeholder/riot-placeholder.tag'
 
 import './assets/styles/main.scss'
