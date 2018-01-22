@@ -19,29 +19,25 @@
   </table>
 
   <button if={ index > 0 } class="button" onclick={ prev }>Prev</button>
-  <button if={ index+1 < list.length/4 } class="button" onclick={ next }>Next</button>
+  <button if={ index+1 < list.length/psize } class="button" onclick={ next }>Next</button>
 
   <script type="es6">
 
-    this.list = this.deploys.list
-    this.page = this.list.slice(0,4)
     this.index = 0
+    this.psize = 4
+    this.list = this.deploys.list
+    this.page = this.list.slice(0,this.psize)
 
     this.edit = e => {
       this.index = 0
       this.list = this.deploys.search(e.target.value)
     }
 
-    this.next = e => {
-      this.index++
-    }
-
-    this.prev = e => {
-      this.index--
-    }
+    this.next = e => this.index++
+    this.prev = e => this.index--
 
     this.on('update', () => {
-      this.page = this.list.slice(this.index*4, this.index*4+4)
+      this.page = this.list.slice(this.index*this.psize, this.index*this.psize+this.psize)
     })
 
   </script>
