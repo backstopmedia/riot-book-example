@@ -22,6 +22,13 @@ app.get('/api/deployments', function(req, res) {
     { service: 'Users', minutes: 1, success: true },
     { service: 'Admin Portal', minutes: 5, success: false },
     { service: 'Website', minutes: 0, success: true },
+    { service: 'DB1', minutes: 12, success: true },
+    { service: 'DB2', minutes: 7, success: true },
+    { service: 'Staging', minutes: 15, success: false },
+    { service: 'QA', minutes: 0, success: true },
+    { service: 'Remote', minutes: 3, success: true },
+    { service: 'Admin Portal', minutes: 4, success: true },
+    { service: 'Website', minutes: 0, success: true },
   ])
 })
 

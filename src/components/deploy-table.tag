@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr each="{ item in list }">
+      <tr each="{ item,i in list }" key={ i }>
         <td>{ item.service }</td>
         <td>{ item.minutes } minutes(s)</td>
         <td>{ item.success ? 'Success' : 'Fail' }</td>
@@ -20,11 +20,10 @@
 
   <script type="es6">
 
-    const self = this
-    self.list = self.deploys.list
+    this.list = this.deploys.list
 
-    self.edit = function(e) {
-      self.list = self.deploys.search(e.target.value)
+    this.edit = e => {
+      this.list = this.deploys.search(e.target.value)
     }
 
   </script>
