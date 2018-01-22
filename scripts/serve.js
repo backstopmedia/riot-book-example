@@ -12,24 +12,14 @@ const devMiddleware = webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 })
 
+const generate = require('../src/util/mock')
+
 app.use(webpackHotMiddleware(compiler))
 app.use(devMiddleware)
 
-/* Hardcoded mock data for deployments */
-app.get('/api/deployments', function(req, res) {
-  res.json([
-    { service: 'Media', minutes: 10, success: true },
-    { service: 'Users', minutes: 1, success: true },
-    { service: 'Admin Portal', minutes: 5, success: false },
-    { service: 'Website', minutes: 0, success: true },
-    { service: 'DB1', minutes: 12, success: true },
-    { service: 'DB2', minutes: 7, success: true },
-    { service: 'Staging', minutes: 15, success: false },
-    { service: 'QA', minutes: 0, success: true },
-    { service: 'Remote', minutes: 3, success: true },
-    { service: 'Admin Portal', minutes: 4, success: true },
-    { service: 'Website', minutes: 0, success: true },
-  ])
+/* Randomize mock data for services */
+app.get('/api/services', function(req, res) {
+  res.json(generate())
 })
 
 app.get('*', function(req, res) {

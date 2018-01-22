@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr each="{ item,i in page }" key={ i }>
-        <td>{ item.service }</td>
+        <td>{ item.name }</td>
         <td>{ item.minutes } minutes(s)</td>
         <td>{ item.success ? 'Success' : 'Fail' }</td>
       </tr>
@@ -30,14 +30,17 @@
 
     this.index = 0
     this.psize = 4
-    this.list = this.deploys.list
+    this.list = this.tracker.services
+
+    console.log(this.list)
+
     this.page = this.list.slice(0,this.psize)
     this.txt = ''
 
     this.edit = e => {
       this.index = 0
       this.txt = e.target.value
-      this.list = this.deploys.search(this.txt)
+      this.list = this.tracker.search(this.txt)
     }
 
     this.next = e => this.index++

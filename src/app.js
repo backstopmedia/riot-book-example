@@ -18,10 +18,8 @@ import './routes/about.tag'
 import './routes/help.tag'
 
 import Tracker from './services/tracker.js'
-import Deployments from './services/deployments.js'
 
 riot.mixin({ tracker: new Tracker(riot) })
-riot.mixin({ deploys: new Deployments(riot) })
 riot.mount('app')
 
 window.riot = riot

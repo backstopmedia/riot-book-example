@@ -53,7 +53,7 @@ const services = [
     }
 
  */
-export default function generate() {
+function generate() {
   const hour = 36e2
   const day = hour * 24
 
@@ -89,3 +89,8 @@ export default function generate() {
 
   return _services
 }
+
+if (module)
+  module.exports = generate
+else
+  exports = generate
