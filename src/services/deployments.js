@@ -16,10 +16,10 @@ export default class Deployments {
   update() {
     this.list = []
 
-    fetch('/api/deployments').then(response => response.json()).then(function(json) {
+    fetch('/api/deployments').then(response => response.json()).then(json => {
       this.list = json
       this.trigger('update')
-    }.bind(this))
+    })
 
   }
 
