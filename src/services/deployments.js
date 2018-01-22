@@ -16,10 +16,11 @@ export default class Deployments {
   update() {
     this.list = []
 
-    $.getJSON('/api/deployments').done(function (data) {
-      this.list = data
+    fetch('/api/deployments').then(response => response.json()).then(function(json) {
+      this.list = json
       this.trigger('update')
-    }.bind(this));
+    }.bind(this))
+
   }
 
   search(txt) {
