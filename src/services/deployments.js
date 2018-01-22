@@ -14,11 +14,10 @@ export default class Deployments {
    * Update deploy data.
    */
   update() {
-    this.deploys = []
+    this.list = []
 
     $.getJSON('/api/deployments').done(function (data) {
       this.list = data
-      console.log(data)
       this.trigger('update')
     }.bind(this));
   }
