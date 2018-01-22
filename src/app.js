@@ -1,24 +1,15 @@
 import riot from 'riot'
+// # path for es6 tag router - http://riotjs.com/api/route/#tag-based-routing
 import 'riot-route/lib/tag'
 // # could do a regular import but would have to use expose loader on riot
 import 'riot-tag-loader!riot-placeholder/riot-placeholder.tag'
-
+// # import our tracker service
+import tracker from './services/tracker.js'
+// # import application assets
 import './assets/styles/main.scss'
-import './components/app.tag'
-import './components/service-card.tag'
-import './components/services-cpu-card.tag'
-import './components/header.tag'
-import './components/bottom.tag'
-import './routes/home.tag'
-import './routes/oversight.tag'
-import './routes/services.tag'
-import './routes/deployments.tag'
-import './routes/about.tag'
-import './routes/help.tag'
-
-import Tracker from './services/tracker.js'
-
-riot.mixin({ tracker: new Tracker(riot) })
+import './components'
+import './routes'
+// # install tracker service as global mixin
+riot.mixin({ tracker: new tracker(riot) })
+// # initialize application
 riot.mount('app')
-
-window.riot = riot
