@@ -58,6 +58,9 @@
                   scaleLabel: {
                     display: true,
                     labelString: 'usage'
+                  },
+                  ticks: {
+                    beginAtZero: true
                   }
                 }]
               }
@@ -103,6 +106,9 @@
                   scaleLabel: {
                     display: true,
                     labelString: 'minutes'
+                  },
+                  ticks: {
+                    beginAtZero: true
                   }
                 }]
               }
