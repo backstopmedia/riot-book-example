@@ -27,7 +27,28 @@ const services = [
     metrics: [],
     uptime: 0,
     builds: []
-  }
+  },
+  {
+    name: 'database',
+    tier: 'application',
+    metrics: [],
+    uptime: 0,
+    builds: []
+  },
+  {
+    name: 'staging',
+    tier: 'application',
+    metrics: [],
+    uptime: 0,
+    builds: []
+  },
+  {
+    name: 'qa-test',
+    tier: 'application',
+    metrics: [],
+    uptime: 0,
+    builds: []
+  },
 ]
 
 /**

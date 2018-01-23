@@ -20,7 +20,6 @@ export default class Tracker {
       .then(response => response.json())
       .catch(error => this.trigger('error'))
       .then(json => {
-        console.log(json)
         this.services = json
         this.trigger('update')
       })
