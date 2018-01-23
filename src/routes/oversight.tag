@@ -12,22 +12,20 @@
       </article>
     </div>
     <div class="columns">
-      <div class="column is-7">
+      <div class="column is-6">
         <section class="hero">
           <div class="hero-body">
+            <h1 class="title">
+              Unhealthy Services
+            </h1>
+            <hr />
             <div class="container is-fluid">
-              <h1 class="title">
-                Unhealthy Services
-              </h1>
-              <hr />
-              <div class="container is-fluid">
-                <ServicesCPUCard services={ alerts } />
-              </div>
+              <ServicesCPUCard services={ alerts } />
             </div>
           </div>
         </section>
       </div>
-      <div class="column is-5">
+      <div class="column is-6">
         <section class="hero">
           <div class="hero-body">
             <div class="container is-fluid">

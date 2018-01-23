@@ -30,12 +30,6 @@
         options: {
           responsive: true,
           scales: {
-            xAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: 'service name'
-              }
-            }],
             yAxes: [{
               ticks: {
                 beginAtZero: true
