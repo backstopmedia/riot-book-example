@@ -12,8 +12,15 @@ const devMiddleware = webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 })
 
+const generate = require('../src/util/mock')
+
 app.use(webpackHotMiddleware(compiler))
 app.use(devMiddleware)
+
+/* Randomize mock data for services */
+app.get('/api/services', function(req, res) {
+  res.json(generate())
+})
 
 app.get('*', function(req, res) {
   const htmlBuffer = devMiddleware.fileSystem.readFileSync(`${config.output.path}/index.html`)

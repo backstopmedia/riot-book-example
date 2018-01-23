@@ -3,21 +3,26 @@ export default class Tracker {
   /**
    * Tracker mixin for aggregating service data.
    * @param {riot} riot - Riot reference.
-   * @param {Array} services - Collection of services for data aggregration.
    */
-  constructor(riot, services) {
+  constructor(riot) {
     this.$riot = riot
     this.$riot.observable(this)
-    this.update(services)
+    this.update()
   }
 
   /**
    * Update tracker service data.
-   * @param {Array} services - Services
    */
-  update(services) {
-    this.services = services
-    this.trigger('update')
+  update() {
+    this.services = []
+
+    fetch('/api/services')
+      .then(response => response.json())
+      .catch(error => this.trigger('error', error))
+      .then(json => {
+        this.services = json
+        this.trigger('update')
+      })
   }
 
   /**
@@ -50,7 +55,7 @@ export default class Tracker {
    */
   search(name) {
     return this.services.filter(service => {
-      return service.name.indexOf(name) !== -1
+      return service.name.toLowerCase().search(name.toLowerCase()) !== -1
     })
   }
 
@@ -70,5 +75,4 @@ export default class Tracker {
       }).reduce(sum) / service.builds.length) : '-'
     }
   }
-
 }
