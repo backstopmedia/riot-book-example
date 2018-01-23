@@ -36,7 +36,7 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Buy The Book!
+          <small><i class="fa fa-shopping-cart"></i></small> Buy The Book!
         </h1>
         <p data-is="ph"></p>
       </div>
