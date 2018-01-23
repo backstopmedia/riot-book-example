@@ -2,7 +2,10 @@
   <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <h1>Dashboard</h1>
+        <img src={ brandImg }
+             alt="Bleeding Edge Press: Publishing at the speed of technogology"
+             width="112"
+             height="28">
       </a>
     </div>
     <div class="navbar-menu">
@@ -44,6 +47,7 @@
         active: false
       }
     ]
+
     // # router middleware to track active route
     route(function(target, action, params) {
       if (self.routes) {
@@ -54,5 +58,7 @@
         self.update()
       }
     })
+
+    self.brandImg = require('../assets/images/bep.png')
   </script>
 </Header>
