@@ -4,7 +4,7 @@ export default class Tracker {
    * Tracker mixin for aggregating service data.
    * @param {riot} riot - Riot reference.
    */
-  constructor(riot, services) {
+  constructor(riot) {
     this.$riot = riot
     this.$riot.observable(this)
     this.update()
@@ -18,7 +18,7 @@ export default class Tracker {
 
     fetch('/api/services')
       .then(response => response.json())
-      .catch(error => this.trigger('error'))
+      .catch(error => this.trigger('error', error))
       .then(json => {
         this.services = json
         this.trigger('update')

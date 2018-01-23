@@ -11,7 +11,7 @@
               </h1>
               <hr />
               <div class="box">
-                <DeployTable/>
+                <DeployTable />
               </div>
             </div>
           </div>

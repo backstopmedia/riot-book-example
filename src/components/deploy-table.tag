@@ -1,9 +1,20 @@
 <DeployTable>
-
-  Service: <input name="service" onkeyup={ edit }
-            class="input { txt.length > 0 && 'is-success' } { page.length == 0 && 'is-danger'}"
-            placeholder="Try Media"/>
-  <table class="table">
+  <div class="field">
+    <label class="label">
+      Service
+    </label>
+    <div class="control has-icons-left">
+      <input name="service"
+             onkeyup={ edit }
+             class="input { txt.length > 0 && 'is-success' } { page.length == 0 && 'is-danger'}"
+             placeholder="Try Media"
+             autofocus />
+      <span class="icon is-small is-left">
+        <i class="fa fa-search"></i>
+      </span>
+    </div>
+  </div>
+  <table class="table" style="width: 100%;">
     <thead>
       <tr>
         <th>Name</th>
