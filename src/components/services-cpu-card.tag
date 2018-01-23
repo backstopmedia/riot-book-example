@@ -1,5 +1,5 @@
 <ServicesCPUCard>
-  <div class="container">
+  <div class="box">
     <canvas ref="chart" style="max-width: 25rem; max-height: 25rem;"></canvas>
   </div>
   <script type="es6">

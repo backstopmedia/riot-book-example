@@ -18,7 +18,7 @@
                 Unhealthy Services
               </h1>
               <hr />
-              <div class="box">
+              <div class="container is-fluid">
                 <ServicesCPUCard services={ alerts } />
               </div>
             </div>
