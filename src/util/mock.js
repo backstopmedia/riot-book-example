@@ -27,6 +27,13 @@ const services = [
     metrics: [],
     uptime: 0,
     builds: []
+  },
+  {
+    name: 'email',
+    tier: 'coordination',
+    metrics: [],
+    uptime: 0,
+    builds: []
   }
 ]
 
