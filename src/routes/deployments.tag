@@ -1,5 +1,4 @@
 <Deployments>
-
   <div class="container is-fluid">
     <div class="columns">
       <div class="column is-12">
@@ -10,7 +9,7 @@
                 Deployments
               </h1>
               <hr />
-              <div class="box">
+              <div class="box animated fadeIn">
                 <DeployTable />
               </div>
             </div>
@@ -19,7 +18,6 @@
       </div>
     </div>
   </div>
-
   <script type="es6">
   </script>
 </Deployments>

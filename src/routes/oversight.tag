@@ -1,7 +1,7 @@
-<Oversight>
+<Oversight class="animated">
   <div class="container is-fluid">
     <!-- can be animated -->
-    <div class="tile is-parent" if={ updated }>
+    <div class="tile is-parent animated fadeIn pulse" if={ updated }>
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
