@@ -8,38 +8,46 @@
 
     function drawChart() {
       const ctx = self.refs.chart.getContext('2d')
+      const cpuSpikes = self.opts.services.map(service => {
+        return Math.max(...service.metrics.map(metric => metric.cpu))
+      })
       const cpuChart = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: self.opts.services.map(service => service.name),
           datasets: [{
             label: 'CPU Spikes',
-            data: self.opts.services.map(service => {
-              return Math.max(...service.metrics.map(metric => metric.cpu))
+            data: cpuSpikes,
+            backgroundColor: cpuSpikes.map(value => {
+              if (value > 80)
+                return 'maroon'
+              if (value > 50)
+                return 'orange'
+              return 'green'
             }),
-            backgroundColor: [],
           }]
         },
         options: {
           responsive: true,
           scales: {
+            xAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'service name'
+              }
+            }],
             yAxes: [{
               ticks: {
-                beginAtZero:true
+                beginAtZero: true
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'usage'
               }
             }]
           }
         }
       })
-      cpuChart.data.datasets[0].data.forEach((data) => {
-        let bg = 'green'
-        if (data > 50)
-          bg = 'orange'
-        if (data > 80)
-          bg = 'maroon'
-        cpuChart.data.datasets[0].backgroundColor.push(bg)
-      })
-      cpuChart.update()
     }
 
     self.on('mount', function() {
