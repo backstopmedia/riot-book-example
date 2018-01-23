@@ -1,6 +1,6 @@
 <ServicesCPUCard>
   <div class="box">
-    <canvas ref="chart" style="max-width: 25rem; max-height: 25rem;"></canvas>
+    <canvas ref="chart"></canvas>
   </div>
   <script type="es6">
     import Chart from 'chart.js'

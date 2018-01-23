@@ -13,7 +13,7 @@
       </div>
       <hr />
       <div class="container is-fluid has-text-centered">
-        <canvas ref="chart" style="max-width: 25rem; max-height: 25rem;"></canvas>
+        <canvas ref="chart"></canvas>
       </div>
     </div>
   </div>
