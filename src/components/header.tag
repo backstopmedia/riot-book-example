@@ -18,6 +18,7 @@
       </div>
       <div class="navbar-end">
         <a class="navbar-item" href="https://github.com/backstopmedia/riot-book-example" target="_blank">
+          Fork on Github
           <span class="icon is-large">
             <i class="fa fa-2x fa-github"></i>
           </span>
