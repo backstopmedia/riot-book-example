@@ -124,7 +124,6 @@
 
     self.changeMode = function() {
       self.mode = self.mode === modes[0] ? modes[1] : modes[0]
-      self.update()
     }
 
     self.mixin(time)
