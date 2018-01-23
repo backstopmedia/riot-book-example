@@ -62,6 +62,5 @@
       self.view = view
     }
 
-    self.mock()
   </script>
 </Home>

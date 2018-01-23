@@ -4,7 +4,9 @@
     <div class="tile is-parent" if={ updated }>
       <article class="tile is-child notification is-primary">
         <div class="content">
-          <p class="title">Last Updated</p>
+          <p class="title">
+            <i class="fa fa-clock-o"></i> Last Updated
+          </p>
           <p class="subtitle">{ updated }</p>
         </div>
       </article>
@@ -62,6 +64,11 @@
     import time from '../mixins/time'
 
     const self = this
+    self.one('mount', function() {
+      self.tracker.one('update', function() {
+        self.update()
+      })
+    })
     self.on('update', function() {
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()

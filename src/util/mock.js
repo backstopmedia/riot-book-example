@@ -1,5 +1,5 @@
 function randomInt(max) {
-  return Math.floor(Math.random() * max)
+  return Math.floor(Math.random() * max + 1)
 }
 
 function randomBool() {
@@ -29,12 +29,26 @@ const services = [
     builds: []
   },
   {
-    name: 'email',
-    tier: 'coordination',
+    name: 'database',
+    tier: 'application',
     metrics: [],
     uptime: 0,
     builds: []
-  }
+  },
+  {
+    name: 'staging',
+    tier: 'application',
+    metrics: [],
+    uptime: 0,
+    builds: []
+  },
+  {
+    name: 'qa-test',
+    tier: 'application',
+    metrics: [],
+    uptime: 0,
+    builds: []
+  },
 ]
 
 /**
@@ -60,7 +74,7 @@ const services = [
     }
 
  */
-export default function generate() {
+function generate() {
   const hour = 36e2
   const day = hour * 24
 
@@ -91,8 +105,13 @@ export default function generate() {
         time: randomInt(hour),
         error: randomBool()
       }
-    })
+    }).sort((a, b) => b.build - a.build)
   })
 
   return _services
 }
+
+if (module)
+  module.exports = generate
+else
+  exports = generate
