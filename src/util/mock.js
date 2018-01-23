@@ -88,7 +88,7 @@ export default function generate() {
     service.builds = [... Array(randomInt(5))].map(() => {
       return {
         build: ++builds,
-        time: randomInt(day),
+        time: randomInt(hour),
         error: randomBool()
       }
     })

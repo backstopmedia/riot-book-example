@@ -80,6 +80,13 @@
                     x: build.build,
                     y: self.secondsToMinutes(build.time)
                   }
+                }),
+                backgroundColor: self.opts.service.builds.map(build => {
+                  if (build.time > 15)
+                    return 'maroon'
+                  if (build.time > 5)
+                    return 'orange'
+                  return 'green'
                 })
               }]
             },
@@ -95,7 +102,7 @@
                 yAxes: [{
                   scaleLabel: {
                     display: true,
-                    labelString: 'time'
+                    labelString: 'minutes'
                   }
                 }]
               }
