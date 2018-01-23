@@ -12,10 +12,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr each="{ item,i in page }" key={ i }>
+      <tr each="{ item,i in page }" key="{ i }">
         <td>{ item.name }</td>
-        <td>{ item.minutes } minutes(s)</td>
-        <td>{ item.success ? 'Success' : 'Fail' }</td>
+        <td>{ Math.round(item.builds[0].time / 60) } minutes(s)</td>
+        <td>{ item.builds[0].error ? 'Success' : 'Fail' }</td>
       </tr>
       <tr if={ list.length == 0}>
         <td colspan="3">No services found.</td>
@@ -31,8 +31,6 @@
     this.index = 0
     this.psize = 4
     this.list = this.tracker.services
-
-    console.log(this.list)
 
     this.page = this.list.slice(0,this.psize)
     this.txt = ''

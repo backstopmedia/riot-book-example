@@ -1,5 +1,5 @@
 function randomInt(max) {
-  return Math.floor(Math.random() * max)
+  return Math.floor(Math.random() * max + 1)
 }
 
 function randomBool() {
@@ -81,10 +81,10 @@ function generate() {
     service.builds = [... Array(randomInt(5))].map(() => {
       return {
         build: ++builds,
-        time: randomInt(day),
+        time: randomInt(hour),
         error: randomBool()
       }
-    })
+    }).sort((a, b) => b.build - a.build)
   })
 
   return _services

@@ -72,5 +72,4 @@ export default class Tracker {
       }).reduce(sum) / service.builds.length) : '-'
     }
   }
-
 }
