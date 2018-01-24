@@ -62,15 +62,17 @@
     import time from '../mixins/time'
     const self = this
 
-    function updateAlerts() {
+    function compose() {
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
-      self.update()
+      if (self.isMounted) {
+        self.update()
+      }
     }
 
     self.on('mount', function() {
-      updateAlerts()
-      self.tracker.on('updated', updateAlerts)
+      compose()
+      self.tracker.on('updated', compose)
     })
 
     // # local mixin example
