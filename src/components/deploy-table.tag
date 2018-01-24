@@ -24,13 +24,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr each="{ item,i in page }" key="{ i }">
+      <tr class="animated fadeIn" each="{ item,i in page }" key="{ i }">
         <td>{ item.name }</td>
         <td>{ Math.round(item.builds[0].time / 60) } minutes(s)</td>
         <td>{ item.builds[0].error ? 'Fail' : 'Success' }</td>
         <td><a if={ item.builds[0].error } onclick={ rebuild }>Rebuild</a></td>
       </tr>
-      <tr if={ page.length == 0}>
+      <tr class="animated fadeInUp" if={ page.length == 0}>
         <td colspan="3">No services found.</td>
       </tr>
     </tbody>
