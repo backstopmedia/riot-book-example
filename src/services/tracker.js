@@ -7,6 +7,7 @@ export default class Tracker {
   constructor(riot) {
     this.$riot = riot
     this.$riot.observable(this)
+    this.services = []
     this.update()
   }
 
@@ -14,14 +15,13 @@ export default class Tracker {
    * Update tracker service data.
    */
   update() {
-    this.services = []
-
+    this.trigger('update')
     fetch('/api/services')
       .then(response => response.json())
       .catch(error => this.trigger('error', error))
       .then(json => {
         this.services = json
-        this.trigger('update')
+        this.trigger('updated')
       })
   }
 
