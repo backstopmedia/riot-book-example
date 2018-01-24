@@ -27,7 +27,7 @@
         name: 'cpu',
         draw: function() {
           const ctx = self.refs.chart.getContext('2d')
-          const chart = new Chart(ctx, {
+          self.chart = new Chart(ctx, {
             type: 'scatter',
             data: {
               label: 'CPU',
@@ -72,7 +72,7 @@
         name: 'builds',
         draw: function() {
           const ctx = self.refs.chart.getContext('2d')
-          const chart = new Chart(ctx, {
+          self.chart = new Chart(ctx, {
             type: 'bar',
             data: {
               labels: self.opts.service.builds.map(build => build.build),
@@ -125,6 +125,8 @@
     })
 
     self.on('update', () => {
+      if (self.chart)
+        self.chart.destroy()
       self.mode.draw()
     })
 
