@@ -47,20 +47,11 @@
     </div>
   </div>
   <script type="es6">
-    import generate from '../util/mock'
-
-    self = this
-
-    // # install mock mixin
-    self.mock = function() {
-      self.tracker.update(generate())
+    this.isView = function(view) {
+      return (this.view || 'oversight') == view
     }
-    self.isView = function(view) {
-      return (self.view || 'oversight') == view
+    this.setView = function(view) {
+      this.view = view
     }
-    self.setView = function(view) {
-      self.view = view
-    }
-
   </script>
 </Home>
