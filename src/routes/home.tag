@@ -31,7 +31,7 @@
                 <ul>
                   <li>
                     <button class="button is-primary"
-                            click={ tracker.update }>Randomize</button>
+                            click={ updateServices }>Randomize</button>
                   </li>
                 </ul>
               </li>
@@ -52,6 +52,10 @@
     }
     this.setView = function(view) {
       this.view = view
+    }
+    this.updateServices = function(e) {
+      e.preventUpdate = true
+      this.tracker.update()
     }
   </script>
 </Home>

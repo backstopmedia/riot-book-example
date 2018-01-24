@@ -1,5 +1,4 @@
 <Deployments>
-
   <div class="container is-fluid">
     <div class="columns">
       <div class="column is-12">
@@ -19,7 +18,12 @@
       </div>
     </div>
   </div>
-
   <script type="es6">
+    const self = this
+    this.tracker.on('updated', function() {
+      if (self.isMounted) {
+        self.update()
+      }
+    })
   </script>
 </Deployments>
