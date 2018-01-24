@@ -1,7 +1,7 @@
 <Home class="animated fadeIn">
   <div class="columns">
     <div class="column is-2 is-hidden-mobile">
-      <sidebar>
+      <sidebar class="animated slideInLeft">
         <aside class="menu">
           <p class="menu-label">
             Admin
