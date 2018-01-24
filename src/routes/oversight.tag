@@ -12,22 +12,20 @@
       </article>
     </div>
     <div class="columns">
-      <div class="column is-7">
+      <div class="column is-6">
         <section class="hero">
           <div class="hero-body">
+            <h1 class="title">
+              Unhealthy Services
+            </h1>
+            <hr />
             <div class="container is-fluid">
-              <h1 class="title">
-                Unhealthy Services
-              </h1>
-              <hr />
-              <div class="box">
-                <ServicesCPUCard services={ alerts } />
-              </div>
+              <ServicesCPUCard services={ alerts } />
             </div>
           </div>
         </section>
       </div>
-      <div class="column is-5">
+      <div class="column is-6">
         <section class="hero">
           <div class="hero-body">
             <div class="container is-fluid">
@@ -64,16 +62,19 @@
     import time from '../mixins/time'
 
     const self = this
-    self.one('mount', function() {
+    self.alerts = []
+    self.on('mount', function() {
       self.tracker.one('update', function() {
         self.update()
       })
+      self.tracker.update()
     })
-    self.on('update', function() {
+    self.tracker.on('update', function() {
+      // # will bind this tag to changes by tracker mixin
+      // # automatically update tag after first update to tracker when changes are made
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
-    }) // # when update triggerred by mixin service
-    self.alerts = self.tracker.alert()
+    })
     // # local mixin example
     self.mixin(time)
   </script>
