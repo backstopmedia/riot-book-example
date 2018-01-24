@@ -71,6 +71,6 @@
       }
     ]
 
-    this.placeholderImg = require('../assets/images/user.svg')
+    this.placeholderImg = require('@/assets/images/user.svg')
   </script>
 </About>

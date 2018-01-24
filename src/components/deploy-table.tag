@@ -40,7 +40,7 @@
   <button if={ canNext() } class="button" onclick={ next }>Next</button>
 
   <script type="es6">
-    import paginator from '../mixins/pagination.js'
+    import paginator from '@/mixins/pagination.js'
     this.mixin(new paginator(this.tracker.services, 4))
 
     this.txt = ''

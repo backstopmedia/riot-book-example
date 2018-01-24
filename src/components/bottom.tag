@@ -24,6 +24,6 @@
     </div>
   </footer>
   <script type="es6">
-    this.riotImg = require('../assets/images/riot.svg')
+    this.riotImg = require('@/assets/images/riot.svg')
   </script>
 </Bottom>
