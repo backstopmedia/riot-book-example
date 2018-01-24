@@ -7,5 +7,10 @@
     </div>
   </div>
   <script type="es6">
+    const self = this
+    this.tracker.on('updated', function() {
+      if (self.isMounted)
+         self.update()
+    })
   </script>
 </Services>
