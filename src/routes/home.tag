@@ -31,7 +31,7 @@
                 <ul>
                   <li>
                     <button class="button is-primary"
-                            click={ mock }>Randomize</button>
+                            click={ tracker.update }>Randomize</button>
                   </li>
                 </ul>
               </li>

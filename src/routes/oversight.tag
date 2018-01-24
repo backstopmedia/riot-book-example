@@ -60,20 +60,13 @@
   </div>
   <script type="es6">
     import time from '../mixins/time'
-
     const self = this
-    self.alerts = []
-    self.on('mount', function() {
-      self.tracker.one('update', function() {
-        self.update()
-      })
-      self.tracker.update()
-    })
-    self.tracker.on('update', function() {
-      // # will bind this tag to changes by tracker mixin
-      // # automatically update tag after first update to tracker when changes are made
+
+    self.alerts = self.tracker.alert()
+    self.tracker.on('updated', function() {
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
+      self.update()
     })
     // # local mixin example
     self.mixin(time)
