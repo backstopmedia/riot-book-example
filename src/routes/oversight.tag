@@ -70,6 +70,8 @@
       self.tracker.update()
     })
     self.tracker.on('update', function() {
+      // # will bind this tag to changes by tracker mixin
+      // # automatically update tag after first update to tracker when changes are made
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
     })
