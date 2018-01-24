@@ -1,5 +1,5 @@
 <About>
-  <section class="hero is-primary">
+  <section class="hero is-primary animated fadeInRight">
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
@@ -9,7 +9,7 @@
       </div>
     </div>
   </section>
-  <section class="hero has-text-centered">
+  <section class="hero has-text-centered animated fadeInLeft">
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
@@ -32,7 +32,7 @@
       </div>
     </div>
   </section>
-  <section class="hero is-primary">
+  <section class="hero is-primary animated fadeInRight">
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
