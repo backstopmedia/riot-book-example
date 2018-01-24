@@ -65,9 +65,8 @@
     function compose() {
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
-      if (self.isMounted) {
+      if (self.isMounted)
         self.update()
-      }
     }
 
     self.on('mount', function() {
