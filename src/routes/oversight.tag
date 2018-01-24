@@ -64,12 +64,14 @@
     const self = this
     self.alerts = []
     self.on('mount', function() {
+      self.tracker.one('update', function() {
+        self.update()
+      })
       self.tracker.update()
     })
     self.tracker.on('update', function() {
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
-      self.update()
     })
     // # local mixin example
     self.mixin(time)
