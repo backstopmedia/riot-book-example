@@ -60,6 +60,6 @@
       }
     })
 
-    self.brandImg = require('../assets/images/bep.png')
+    self.brandImg = require('@/assets/images/bep.png')
   </script>
 </Header>
