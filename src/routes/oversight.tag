@@ -62,16 +62,15 @@
     import time from '../mixins/time'
 
     const self = this
-    self.one('mount', function() {
-      self.tracker.one('update', function() {
-        self.update()
-      })
+    self.alerts = []
+    self.on('mount', function() {
+      self.tracker.update()
     })
-    self.on('update', function() {
+    self.tracker.on('update', function() {
       self.alerts = self.tracker.alert()
       self.updated = new Date().toLocaleString()
-    }) // # when update triggerred by mixin service
-    self.alerts = self.tracker.alert()
+      self.update()
+    })
     // # local mixin example
     self.mixin(time)
   </script>
