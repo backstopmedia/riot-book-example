@@ -7,7 +7,7 @@ export default class Tracker {
   constructor(riot) {
     this.$riot = riot
     this.$riot.observable(this)
-    this.services = []
+    this._services = []
     this.update()
   }
 
@@ -23,6 +23,34 @@ export default class Tracker {
         this.services = json
         this.trigger('updated')
       })
+  }
+
+  /**
+   * Overwrite tracker services
+   * @param {Array} services - services to overwrite.
+   */
+  set services(services) {
+    this._services = services.map(service => Object.assign({}, service))
+  }
+
+  /**
+   * Get clean copy of services.
+   * @returns {Array}
+   */
+  get services() {
+    return this._services.map(service => Object.assign({}, service))
+  }
+
+  /**
+   * Find services that have had a cpu spike of less than 30%.
+   * @returns {Array}
+   */
+  healthy() {
+    return this.services.filter(service => {
+      return service.metrics.find(metric => {
+        return metric.cpu <= 30
+      })
+    })
   }
 
   /**
