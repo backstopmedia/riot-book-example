@@ -1,7 +1,9 @@
 <Oversight class="animated">
   <div class="container is-fluid">
     <!-- can be animated -->
-    <div class="tile is-parent animated fadeIn pulse" if={ updated }>
+    <div class="tile is-parent animated" if={ updated }
+         data-is="animore"
+         mount={{ duration: 1500, translateY: [250, 0] }}>
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
