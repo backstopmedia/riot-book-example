@@ -10,6 +10,12 @@ import tracker from './services/tracker.js'
 import './assets/styles/main.scss'
 import './components'
 import './routes'
+// # set localization
+import i18n from 'riot-i18n'
+import locales from './i18n.json'
+i18n.dictionary(locales)
+i18n.setLanguage('en-US')
+riot.mixin(i18n)
 // # install tracker service as global mixin
 riot.mixin({ tracker: new tracker(riot) })
 // # initialize application

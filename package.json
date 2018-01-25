@@ -71,6 +71,7 @@
     "riot": "^3.8.1",
     "riot-animore": "^1.0.0",
     "riot-hot-reload": "^1.0.0",
+    "riot-i18n": "^0.2.1",
     "riot-placeholder": "^1.0.5",
     "riot-route": "^3.1.2",
     "riot-tag-loader": "^2.0.2",

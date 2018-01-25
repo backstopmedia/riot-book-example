@@ -7,7 +7,7 @@
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
-            <i class="fa fa-clock-o"></i> Last Updated
+            <i class="fa fa-clock-o"></i> <i1-8n>oversight</i1-8n>
           </p>
           <p class="subtitle">{ updated }</p>
         </div>
