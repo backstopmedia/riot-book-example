@@ -16,11 +16,11 @@
         <section class="hero">
           <div class="hero-body">
             <h1 class="title">
-              Unhealthy Services
+              Critical Services
             </h1>
             <hr />
             <div class="container is-fluid">
-              <ServicesCPUCard services={ alerts } />
+              <ServicesCPUCard services={ critical } />
             </div>
           </div>
         </section>
@@ -35,7 +35,7 @@
               <h2 class="subtitle">
                 Stats
               </h2>
-              <div class="box">
+              <div class="box animated">
                 <table class="table">
                   <thead>
                     <tr>
@@ -44,7 +44,7 @@
                       <th>Uptime</th>
                   </thead>
                   <tbody>
-                    <tr each={service in alerts}>
+                    <tr each={service in critical}>
                       <td>{ service.name }</td>
                       <td>{ this.tracker.average(service).cpu } %</td>
                       <td>{ this.secondsToMinutes(this.service.uptime) } min</td>
@@ -63,7 +63,7 @@
     const self = this
 
     function compose() {
-      self.alerts = self.tracker.alert()
+      self.critical = self.tracker.critical()
       self.updated = new Date().toLocaleString()
       if (self.isMounted)
         self.update()
