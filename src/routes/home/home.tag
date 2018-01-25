@@ -55,6 +55,7 @@
     }
     this.updateServices = function(e) {
       e.preventUpdate = true
+      // # update service data without triggering updates in sub views
       this.tracker.update()
     }
   </script>

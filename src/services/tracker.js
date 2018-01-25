@@ -12,20 +12,6 @@ export default class Tracker {
   }
 
   /**
-   * Update tracker service data.
-   */
-  update() {
-    this.trigger('update')
-    fetch('/api/services')
-      .then(response => response.json())
-      .catch(error => this.trigger('error', error))
-      .then(json => {
-        this.services = json
-        this.trigger('updated')
-      })
-  }
-
-  /**
    * Overwrite tracker services
    * @param {Array} services - services to overwrite.
    */
@@ -39,6 +25,20 @@ export default class Tracker {
    */
   get services() {
     return this._services.map(service => Object.assign({}, service))
+  }
+
+  /**
+   * Update tracker service data.
+   */
+  update() {
+    this.trigger('update')
+    fetch('/api/services')
+      .then(response => response.json())
+      .catch(error => this.trigger('error', error))
+      .then(json => {
+        this.services = json
+        this.trigger('updated')
+      })
   }
 
   /**
@@ -74,16 +74,6 @@ export default class Tracker {
       return service.metrics.find(metric => {
         return metric.cpu > 50
       })
-    })
-  }
-
-  /**
-   * Search for service by field.
-   * @returns {Array}
-   */
-  search(name) {
-    return this.services.filter(service => {
-      return service.name.toLowerCase().search(name.toLowerCase()) !== -1
     })
   }
 
