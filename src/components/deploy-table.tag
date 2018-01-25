@@ -38,8 +38,8 @@
       </tbody>
     </table>
 
-    <button if={ pagination.canPrev() } class="button" onclick={ pagination.prev }>Prev</button>
-    <button if={ pagination.canNext() } class="button" onclick={ pagination.next }>Next</button>
+    <button if={ pagination.canPrev() } class="button" onclick={ prevPage }>Prev</button>
+    <button if={ pagination.canNext() } class="button" onclick={ nextPage }>Next</button>
 
   </virtual>
 
@@ -83,6 +83,16 @@
 
     self.rebuild = function(e) {
       e.item.item.builds[0].error = false
+    }
+
+    self.nextPage = function() {
+      self.pagination.next()
+      self.update(true)
+    }
+
+    self.prevPage = function() {
+      self.pagination.prev()
+      self.update(true)
     }
   </script>
 </DeployTable>
