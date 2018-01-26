@@ -41,7 +41,7 @@
       </sidebar>
     </div>
     <div class="column is-9">
-      <Oversight if={ isView('oversight') } services={ servies } critical={ critical } />
+      <Oversight if={ isView('oversight') } services={ services } critical={ critical } />
       <Services if={ isView('services') } services={ services } />
       <Deployments if={ isView('deployments') } services={ services } />
     </div>
