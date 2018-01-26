@@ -1,4 +1,4 @@
-<Oversight class="animated bounceIn">
+<Oversight class="animated fadeIn">
   <div class="container is-fluid">
     <!-- can be animated -->
     <div class="tile is-parent" if={ updated }
