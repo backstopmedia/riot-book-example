@@ -1,4 +1,4 @@
-<Home class="animated fadeIn">
+<Home>
   <div class="columns">
     <div class="column is-2 is-hidden-mobile">
       <sidebar class="animated slideInLeft">
