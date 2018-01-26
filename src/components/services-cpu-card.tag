@@ -7,41 +7,43 @@
     const self = this
 
     function drawChart() {
-      const ctx = self.refs.chart.getContext('2d')
-      const cpuSpikes = self.opts.services.map(service => {
-        return Math.max(...service.metrics.map(metric => metric.cpu))
-      })
-      self.cpuChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: self.opts.services.map(service => service.name),
-          datasets: [{
-            label: 'CPU Spikes',
-            data: cpuSpikes,
-            backgroundColor: cpuSpikes.map(value => {
-              if (value > 80)
-                return 'maroon'
-              if (value > 50)
-                return 'orange'
-              return 'green'
-            }),
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'usage'
-              }
+      if (self.opts.services) {
+        const ctx = self.refs.chart.getContext('2d')
+        const cpuSpikes = self.opts.services.map(service => {
+          return Math.max(...service.metrics.map(metric => metric.cpu))
+        })
+        self.cpuChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: self.opts.services.map(service => service.name),
+            datasets: [{
+              label: 'CPU Spikes',
+              data: cpuSpikes,
+              backgroundColor: cpuSpikes.map(value => {
+                if (value > 80)
+                  return 'maroon'
+                if (value > 50)
+                  return 'orange'
+                return 'green'
+              }),
             }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'usage'
+                }
+              }]
+            }
           }
-        }
-      })
+        })
+      }
     }
 
     self.on('mount', function() {

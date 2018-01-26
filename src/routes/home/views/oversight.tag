@@ -22,7 +22,7 @@
             </h1>
             <hr />
             <div class="container is-fluid">
-              <ServicesCPUCard services={ critical } />
+              <ServicesCPUCard services={ opts.critical } />
             </div>
           </div>
         </section>
@@ -46,7 +46,7 @@
                       <th>Uptime</th>
                   </thead>
                   <tbody>
-                    <tr each={service in critical}>
+                    <tr each={service in opts.critical}>
                       <td>{ service.name }</td>
                       <td>{ this.tracker.average(service).cpu } %</td>
                       <td>{ this.secondsToMinutes(this.service.uptime) } min</td>
@@ -62,21 +62,7 @@
   </div>
   <script type="es6">
     import time from '@/mixins/time'
-    const self = this
-
-    function compose() {
-      self.critical = self.tracker.critical()
-      self.updated = new Date().toLocaleString()
-      if (self.isMounted)
-        self.update()
-    }
-
-    self.on('mount', function() {
-      compose()
-      self.tracker.on('updated', compose)
-    })
-
     // # local mixin example
-    self.mixin(time)
+    this.mixin(time)
   </script>
 </Oversight>
