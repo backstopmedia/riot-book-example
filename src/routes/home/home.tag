@@ -1,7 +1,7 @@
-<Home>
+<Home class="animated fadeIn">
   <div class="columns">
     <div class="column is-2 is-hidden-mobile">
-      <sidebar>
+      <sidebar class="animated slideInLeft">
         <aside class="menu">
           <p class="menu-label">
             Admin
@@ -55,6 +55,7 @@
     }
     this.updateServices = function(e) {
       e.preventUpdate = true
+      // # update service data without triggering updates in sub views
       this.tracker.update()
     }
   </script>

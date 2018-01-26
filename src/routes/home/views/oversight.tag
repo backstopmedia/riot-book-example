@@ -1,7 +1,9 @@
-<Oversight>
+<Oversight class="animated">
   <div class="container is-fluid">
     <!-- can be animated -->
-    <div class="tile is-parent" if={ updated }>
+    <div class="tile is-parent animated" if={ updated }
+         data-is="animore"
+         mount={{ duration: 1500, translateY: [250, 0] }}>
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
@@ -16,11 +18,11 @@
         <section class="hero">
           <div class="hero-body">
             <h1 class="title">
-              Unhealthy Services
+              Critical Services
             </h1>
             <hr />
             <div class="container is-fluid">
-              <ServicesCPUCard services={ alerts } />
+              <ServicesCPUCard services={ critical } />
             </div>
           </div>
         </section>
@@ -35,7 +37,7 @@
               <h2 class="subtitle">
                 Stats
               </h2>
-              <div class="box">
+              <div class="box animated">
                 <table class="table">
                   <thead>
                     <tr>
@@ -44,7 +46,7 @@
                       <th>Uptime</th>
                   </thead>
                   <tbody>
-                    <tr each={service in alerts}>
+                    <tr each={service in critical}>
                       <td>{ service.name }</td>
                       <td>{ this.tracker.average(service).cpu } %</td>
                       <td>{ this.secondsToMinutes(this.service.uptime) } min</td>
@@ -59,11 +61,11 @@
     </div>
   </div>
   <script type="es6">
-    import time from '../mixins/time'
+    import time from '@/mixins/time'
     const self = this
 
     function compose() {
-      self.alerts = self.tracker.alert()
+      self.critical = self.tracker.critical()
       self.updated = new Date().toLocaleString()
       if (self.isMounted)
         self.update()

@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/neetjn/riot-book-example#readme",
   "devDependencies": {
-    "animejs": "^2.2.0",
+    "animate.css": "^3.5.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -69,6 +69,7 @@
     "node-sass": "^4.7.2",
     "raw-loader": "^0.5.1",
     "riot": "^3.8.1",
+    "riot-animore": "^1.0.0",
     "riot-hot-reload": "^1.0.0",
     "riot-placeholder": "^1.0.5",
     "riot-route": "^3.1.2",

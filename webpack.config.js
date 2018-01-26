@@ -20,6 +20,11 @@ module.exports = {
       inject: 'body'
     })
   ],
+  resolve: {
+    alias: {
+      '@': path.join(__dirname, '/src')
+    }
+  },
   module: {
     rules: [
       {

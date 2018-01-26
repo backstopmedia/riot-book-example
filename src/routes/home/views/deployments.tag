@@ -9,8 +9,8 @@
                 Deployments
               </h1>
               <hr />
-              <div class="box">
-                <DeployTable />
+              <div class="box animated fadeIn">
+                <DeployTable services={ services } />
               </div>
             </div>
           </div>
@@ -20,9 +20,14 @@
   </div>
   <script type="es6">
     const self = this
-    this.tracker.on('updated', function() {
+    function compose() {
+      self.services = self.tracker.services
+      self.update()
+    }
+    self.on('mount', compose)
+    self.tracker.on('updated', function() {
       if (self.isMounted)
-        self.update()
+        compose()
     })
   </script>
 </Deployments>

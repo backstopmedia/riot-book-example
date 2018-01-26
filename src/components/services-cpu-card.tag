@@ -11,7 +11,7 @@
       const cpuSpikes = self.opts.services.map(service => {
         return Math.max(...service.metrics.map(metric => metric.cpu))
       })
-      const cpuChart = new Chart(ctx, {
+      self.cpuChart = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: self.opts.services.map(service => service.name),
@@ -49,6 +49,8 @@
     })
 
     self.on('update', function() {
+      if (self.cpuChart)
+        self.cpuChart.destroy()
       drawChart()
     })
   </script>

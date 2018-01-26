@@ -1,4 +1,5 @@
 import riot from 'riot'
+import 'riot-animore'
 // # path for es6 tag router - http://riotjs.com/api/route/#tag-based-routing
 import 'riot-route/lib/tag'
 // # could do a regular import but would have to use expose loader on riot
