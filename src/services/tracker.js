@@ -34,11 +34,11 @@ export default class Tracker {
     this.trigger('update')
     fetch('/api/services')
       .then(response => response.json())
-      .catch(error => this.trigger('error', error))
       .then(json => {
         this.services = json
         this.trigger('updated')
       })
+      .catch(error => this.trigger('error', error))
   }
 
   /**

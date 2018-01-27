@@ -1,4 +1,4 @@
-<Home class="animated fadeIn">
+<Home>
   <div class="columns">
     <div class="column is-2 is-hidden-mobile">
       <sidebar class="animated slideInLeft">
@@ -41,22 +41,42 @@
       </sidebar>
     </div>
     <div class="column is-9">
-      <Oversight if={ isView('oversight') } />
-      <Services if={ isView('services') } />
-      <Deployments if={ isView('deployments') } />
+      <Oversight if={ isView('oversight') } services={ services } critical={ critical } />
+      <Services if={ isView('services') } services={ services } />
+      <Deployments if={ isView('deployments') } services={ services } />
     </div>
   </div>
   <script type="es6">
-    this.isView = function(view) {
-      return (this.view || 'oversight') == view
+    const self = this
+    
+    self.services = self.tracker.services
+    self.critical = self.tracker.critical()
+    self.isView = function(view) {
+      return (self.view || 'oversight') == view
     }
-    this.setView = function(view) {
-      this.view = view
+    self.setView = function(view) {
+      self.view = view
     }
-    this.updateServices = function(e) {
+    self.updateServices = function(e) {
+      // # prevent automatic update
       e.preventUpdate = true
-      // # update service data without triggering updates in sub views
-      this.tracker.update()
+      // # update services
+      self.tracker.update()
+      // # manually update home component
+      self.update()
     }
+    // # update service data on update
+    self.on('update', function() {
+      self.services = self.tracker.services
+      self.critical = self.tracker.critical()
+    })
+    self.on('mount', function() {
+      // # if no data is initially found, assume first load
+      // # add listener for tracker observable updated
+      if (!self.services.length)
+        self.tracker.one('updated', function() {
+          self.update()
+        })
+    })
   </script>
 </Home>

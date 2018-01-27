@@ -1,4 +1,4 @@
-export default class Paginator {
+export default class Pagination {
 
   /**
    * Pagination mixin.
@@ -7,9 +7,7 @@ export default class Paginator {
    */
   constructor(data, pageSize = 5) {
     this.pageSize = pageSize
-    this.pageIndex = 0
-    this.data = data
-    this.paginate()
+    this.paginate(data)
   }
 
   /** Get pagination data set. */
@@ -30,7 +28,10 @@ export default class Paginator {
    * @param {Array} data - Optional data for overriding data set.
    */
   paginate(data = null) {
-    if (data) this.data = data
+    if (data) {
+      this.data = data
+      this.pageIndex = 0
+    }
     this.pageCount = this.data.length / this.pageSize - 1
     this.page = this.data.slice(this.pageIndex*this.pageSize).slice(0, this.pageSize)
   }

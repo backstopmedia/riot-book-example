@@ -10,7 +10,7 @@
               </h1>
               <hr />
               <div class="box animated fadeIn">
-                <DeployTable services={ services } />
+                <DeployTable services={ opts.services } />
               </div>
             </div>
           </div>
@@ -18,16 +18,4 @@
       </div>
     </div>
   </div>
-  <script type="es6">
-    const self = this
-    function compose() {
-      self.services = self.tracker.services
-      self.update()
-    }
-    self.on('mount', compose)
-    self.tracker.on('updated', function() {
-      if (self.isMounted)
-        compose()
-    })
-  </script>
 </Deployments>
