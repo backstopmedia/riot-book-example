@@ -67,7 +67,6 @@
     }
     // # update service data on update
     self.on('update', function() {
-      console.log('update')
       self.services = self.tracker.services
       self.critical = self.tracker.critical()
     })
