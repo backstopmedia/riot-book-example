@@ -72,5 +72,8 @@
       self.services = self.tracker.services
       self.critical = self.tracker.critical()
     })
+    self.on('mount', function() {
+      self.update()
+    })
   </script>
 </Home>
