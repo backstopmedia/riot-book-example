@@ -1,4 +1,4 @@
-export default class Paginator {
+export default class Pagination {
 
   /**
    * Pagination mixin.
