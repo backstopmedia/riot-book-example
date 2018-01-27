@@ -48,7 +48,9 @@
   </div>
   <script type="es6">
     const self = this
-
+    
+    self.services = self.tracker.services
+    self.critical = self.tracker.critical()
     self.isView = function(view) {
       return (self.view || 'oversight') == view
     }
@@ -63,17 +65,18 @@
       // # manually update home component
       self.update()
     }
-    // # store service data on initial update
-    self.tracker.one('updated', function() {
-      self.update()
-    })
     // # update service data on update
     self.on('update', function() {
       self.services = self.tracker.services
       self.critical = self.tracker.critical()
     })
     self.on('mount', function() {
-      self.update()
+      // # if no data is initially found, assume first load
+      // # add listener for tracker observable updated
+      if (!self.services.length)
+        self.tracker.one('updated', function() {
+          self.update()
+        })
     })
   </script>
 </Home>
