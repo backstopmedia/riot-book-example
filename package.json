@@ -84,6 +84,5 @@
     "webpack-dev-server": "^2.11.0",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-html-plugin": "^0.1.1"
-  },
-  "dependencies": {}
+  }
 }
