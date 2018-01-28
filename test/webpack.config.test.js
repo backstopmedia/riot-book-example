@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   entry: './test/components.js',
   output: {
-    path: path.join(__dirname, '../test'),
+    path: path.join(__dirname, '../test/dist'),
     publicPath: 'test/',
     filename: 'bundle.js',
     libraryTarget: 'umd',

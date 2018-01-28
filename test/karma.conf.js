@@ -13,7 +13,7 @@ module.exports = function (config) {
     ],
     files: [
       './mocks.js',
-      './bundle.js',
+      './dist/bundle.js',
       '**/specs/*.test.js'
     ],
     reporters: ['progress', 'mocha'],
