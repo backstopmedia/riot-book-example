@@ -1,6 +1,6 @@
 <DeployTable>
   <div class="field">
-    <label class="label" data-is="localize" item="deployTable.service">
+    <label class="label" data-is="localize" item="deployTable.service" />
     <div class="control has-icons-left">
       <input name="service"
             onkeyup={ edit }

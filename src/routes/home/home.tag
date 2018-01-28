@@ -77,7 +77,7 @@
       self.view = view
     }
     self.changeLanguage = function(locale) {
-      self.localize.locale = locale
+      self.localize.locale(locale)
     }
     self.updateServices = function(e) {
       // # prevent automatic update

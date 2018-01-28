@@ -18,26 +18,26 @@ export default class Localize {
     this._locale = window.localStorage.getItem('localization') || this.options.default
   }
 
-  /** Fetch current locale. */
-  get locale() {
-    return this._locale
-  }
-
   /**
-   * Set current locale.
+   * Get or set current locale.
    * @param {String} locale - Locale to use.
+   * @returns {String|null}
    */
-  set locale(locale) {
-    if (this.options.locales.find(l => l == locale)) {
-      self.trigger('error', {
-        message: `Locale "${ locale }" not recognized`
-      })
-      return
+  locale(locale = null) {
+    if (locale) {
+      if (this.options.locales.find(l => l == locale)) {
+        self.trigger('error', {
+          message: `Locale "${ locale }" not recognized`
+        })
+        return
+      }
+      this.trigger('update')
+      window.localStorage.setItem('localization', locale)
+      this._locale = locale
+      this.trigger('updated')
+    } else {
+      return this._locale
     }
-    this.trigger('update')
-    window.localStorage.setItem('localization', locale)
-    this._locale = locale
-    this.trigger('updated')
   }
 
   /**
@@ -47,7 +47,7 @@ export default class Localize {
    */
   localize(item, locale = null) {
     const self = this
-    let stub = self.localizations[locale || self.locale]
+    let stub = self.localizations[locale || self._locale]
     if (locale && this.options.locales.find(l => l == locale))
       throw new Error(`Locale "${ locale }" not recognized`)
     item.split('.').forEach(key => {
@@ -55,9 +55,9 @@ export default class Localize {
         stub = stub[key]
       else
         throw new Error(
-          `Provided item "${ item }" could not be localized in locale "${ locale || self.locale }".`)
+          `Provided item "${ item }" could not be localized in locale "${ locale || self._locale }".`)
     })
-    self.trigger('localize', { item, locale: locale || self.locale })
+    self.trigger('localize', { item, locale: locale || self._locale })
     return stub
   }
 
