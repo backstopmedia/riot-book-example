@@ -1,0 +1,110 @@
+{
+  "en-US": {
+    "locale": {
+      "languages": {
+        "english": "English",
+        "spanish": "Spanish"
+      }
+    },
+    "header": {
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "help": "Help"
+      }
+    },
+    "home": {
+      "menu": {
+        "admin": "Admin",
+        "languages": "Languages",
+        "tools": "Tools"
+      },
+      "views": {
+        "oversight": "Oversight",
+        "services": "Services",
+        "deployments": "Deployments"
+      }
+    },
+    "oversight": {
+      "updated": "Last Updated",
+      "criticalServices": "Critical Services",
+      "controlPanel": {
+        "title": "Control Panel",
+        "subtitle": "Stats",
+        "table": {
+          "name": "Name",
+          "uptime": "Uptime"
+        }
+      }
+    },
+    "deployments": {
+      "title": "Deployments"
+    },
+    "deployTable": {
+      "name": "Name",
+      "buildTime": "Build Time",
+      "status": "Status",
+      "action": "Action",
+      "service": "Service",
+      "tableCell": {
+        "fail": "Fail",
+        "success": "Success",
+        "rebuild": "Rebuild"
+      }
+    }
+  },
+  "es-SP": {
+    "locale": {
+      "languages": {
+        "english": "Inglés",
+        "spanish": "Español"
+      }
+    },
+    "header": {
+      "nav": {
+        "home": "Inicio",
+        "about": "De Nosotros",
+        "help": "Ayuda"
+      }
+    },
+    "home": {
+      "menu": {
+        "admin": "Administración",
+        "languages": "Idiomas",
+        "tools": "Herramientas"
+      },
+      "views": {
+        "oversight": "Vigilancia",
+        "services": "Servicios",
+        "deployments": "Despliegues"
+      }
+    },
+    "oversight": {
+      "updated": "Ultima atualização",
+      "criticalServices": "Servicios Críticos",
+      "controlPanel": {
+        "title": "Panel de Control",
+        "subtitle": "Estadísticas",
+        "table": {
+          "name": "Nombre",
+          "uptime": "Activado"
+        }
+      }
+    },
+    "deployments": {
+      "title": "Implementaciones"
+    },
+    "deployTable": {
+      "name": "Nombre",
+      "buildTime": "Tiempo de Construcción",
+      "status": "Estado",
+      "action": "Acción",
+      "service": "Servicio",
+      "tableCell": {
+        "fail": "Fallar",
+        "success": "Éxito",
+        "rebuild": "Reconstruir"
+      }
+    }
+  }
+}

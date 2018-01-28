@@ -19,7 +19,7 @@
   </div>
   <script type="es6">
     import Chart from 'chart.js'
-    import time from '../mixins/time'
+    import time from '@/mixins/time'
     const self = this
 
     const modes = [

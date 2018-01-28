@@ -4,13 +4,22 @@ import 'riot-animore'
 import 'riot-route/lib/tag'
 // # could do a regular import but would have to use expose loader on riot
 import 'riot-tag-loader!riot-placeholder/riot-placeholder.tag'
-// # import our tracker service
-import tracker from './services/tracker.js'
 // # import application assets
 import './assets/styles/main.scss'
 import './components'
 import './routes'
-// # install tracker service as global mixin
-riot.mixin({ tracker: new tracker(riot) })
+// # import our mixin services
+import Localize from './services/localize.js'
+import Tracker from './services/tracker.js'
+// # install localize service as a named global mixin
+import localizations from './i18n.json'
+riot.mixin({
+  localize: new Localize(riot, localizations, {
+    default: 'en-US',
+    locales: ['en-US, es-SP']
+  })
+})
+// # install tracker service as a named global mixin
+riot.mixin({ tracker: new Tracker(riot) })
 // # initialize application
 riot.mount('app')

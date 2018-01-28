@@ -3,35 +3,42 @@
     <div class="column is-2 is-hidden-mobile">
       <sidebar class="animated slideInLeft">
         <aside class="menu">
-          <p class="menu-label">
-            Admin
-          </p>
+          <p class="menu-label" data-is="localize" item="home.menu.admin" />
           <ul class="menu-list">
             <li>
-              <a class="{is-active: isView('oversight')}"
-                 click={ () => setView('oversight') }>
-                 Oversight</a>
+              <a class={ is-active: isView('oversight') }
+                 click={ () => setView('oversight') }
+                 data-is="localize"
+                 item="home.views.oversight" />
             </li>
             <li>
-              <a class="{is-active: isView('services')}"
-                 click={ () => setView('services') }>
-                 Services</a>
+              <a class={ is-active: isView('services') }
+                 click={ () => setView('services') }
+                 data-is="localize"
+                 item="home.views.services" />
             </li>
             <li>
-              <a class="{is-active: isView('deployments')}"
-                 click={ () => setView('deployments') }>
-                 Deployments</a>
+              <a class={ is-active: isView('deployments') }
+                 click={ () => setView('deployments') }
+                 data-is="localize"
+                 item="home.views.deployments" />
             </li>
-            <p class="menu-label">
-              Tools
-            </p>
+            <p class="menu-label" data-is="localize" item="home.menu.languages" />
+            <ul class="menu-list">
+              <li each={ language in languages }>
+                <a class={ is-active: localize.locale == language.localeKey }
+                   data-is="localize"
+                   item={ language.localeLabel }
+                   click={ () => changeLanguage(language.localeKey) } />
+              </li>
+            </ul>
+            <p class="menu-label" data-is="localize" item="home.menu.tools" />
             <ul class="menu-list">
               <li>
-                <a class="">Development</a>
+                <a>Development</a>
                 <ul>
                   <li>
-                    <button class="button is-primary"
-                            click={ updateServices }>Randomize</button>
+                    <button class="button is-primary" click={ updateServices }>Randomize</button>
                   </li>
                 </ul>
               </li>
@@ -48,14 +55,29 @@
   </div>
   <script type="es6">
     const self = this
-    
+
+    self.languages = [
+      {
+        'localeKey': 'en-US',
+        'localeLabel': 'locale.languages.english'
+      },
+      {
+        'localeKey': 'es-SP',
+        'localeLabel': 'locale.languages.spanish'
+      }
+    ]
+
     self.services = self.tracker.services
     self.critical = self.tracker.critical()
+
     self.isView = function(view) {
       return (self.view || 'oversight') == view
     }
     self.setView = function(view) {
       self.view = view
+    }
+    self.changeLanguage = function(locale) {
+      self.localize.locale(locale)
     }
     self.updateServices = function(e) {
       // # prevent automatic update
