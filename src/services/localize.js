@@ -25,12 +25,8 @@ export default class Localize {
    */
   locale(locale = null) {
     if (locale) {
-      if (this.options.locales.find(l => l == locale)) {
-        self.trigger('error', {
-          message: `Locale "${ locale }" not recognized`
-        })
-        return
-      }
+      if (this.options.locales.find(l => l == locale))
+        throw new Error(`Locale "${ locale }" not recognized`)
       this.trigger('update')
       window.localStorage.setItem('localization', locale)
       this._locale = locale
