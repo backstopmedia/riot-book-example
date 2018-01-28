@@ -19,9 +19,9 @@
       <div class="column is-6">
         <section class="hero">
           <div class="hero-body">
-            <h1 class="title">
-              Critical Services
-            </h1>
+            <h1 class="title"
+                data-is="localize"
+                item="oversight.criticalServices" />
             <hr />
             <div class="container is-fluid">
               <ServicesCPUCard services={ opts.critical } />
@@ -33,19 +33,21 @@
         <section class="hero">
           <div class="hero-body">
             <div class="container is-fluid">
-              <h1 class="title">
-                Control Panel
-              </h1>
-              <h2 class="subtitle">
-                Stats
-              </h2>
+              <h1 class="title"
+                  data-is="localize"
+                  item="oversight.controlPanel.title" />
+              <h2 class="subtitle"
+                  data-is="localize"
+                  item="oversight.controlPanel.subtitle" />
               <div class="box animated">
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th><abbr title="Average CPU Usage">CPU</abbr></th>
-                      <th>Uptime</th>
+                      <th data-is="localize"
+                          item="oversight.controlPanel.table.name" />
+                      <th><abbr title="Avg. CPU Usage">CPU</abbr></th>
+                      <th data-is="localize"
+                          item="oversight.controlPanel.table.uptime" />
                   </thead>
                   <tbody>
                     <tr each={service in opts.critical}>

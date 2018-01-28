@@ -1,8 +1,6 @@
 <DeployTable>
   <div class="field">
-    <label class="label">
-      Service
-    </label>
+    <label class="label" data-is="localize" item="deployTable.service">
     <div class="control has-icons-left">
       <input name="service"
             onkeyup={ edit }
@@ -17,18 +15,23 @@
   <table class="table" style="width: 100%">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Build Time</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th data-is="localize" item="deployTable.name" />
+        <th data-is="localize" item="deployTable.buildTime" />
+        <th data-is="localize" item="deployTable.status" />
+        <th data-is="localize" item="deployTable.action" />
       </tr>
     </thead>
     <tbody>
       <tr class="animated fadeIn" each="{ item, i in pagination.page }" key="{ i }">
         <td>{ item.name }</td>
         <td>{ Math.round(item.builds[0].time / 60) } minutes(s)</td>
-        <td>{ item.builds[0].error ? 'Fail' : 'Success' }</td>
-        <td><a if={ item.builds[0].error } onclick={ rebuild }>Rebuild</a></td>
+        <td>{ item.builds[0].error ? localize.localize('deployTable.tableCell.fail') : localize.localize('deployTable.tableCell.success') }</td>
+        <td>
+          <a if={ item.builds[0].error }
+             onclick={ rebuild }
+             data-is="localize"
+             item="deployTable.tableCell.rebuild" />
+        </td>
       </tr>
       <tr class="animated fadeInUp" if={ pagination.page.length == 0 }>
         <td colspan="3">No services found.</td>
