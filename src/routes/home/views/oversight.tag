@@ -4,7 +4,7 @@
     <div class="tile is-parent" if={ updated }
          data-is="animore"
          style="opacity: 0"
-         mount={{ duration: 1500, opacity: 1, easing: 'linear' }}
+         mount={{ opacity: 1 }}
          update={{ duration: 800, scale: [1, 0, 1] }}>
       <article class="tile is-child notification is-primary">
         <div class="content">

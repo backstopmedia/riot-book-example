@@ -24,7 +24,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="animated fadeIn" each="{ item, i in pagination.page }" key="{ i }">
+      <tr each="{ item, i in pagination.page }"
+          key="{ i }"
+          data-is="animore"
+          style="opacity: 0"
+          mount={{ duration: 1000, translateX: [-25, 0], opacity: 1 }}
+          unmount={{ duration: 500, translateX: [0, 25], opacity: 0 }}>
         <td>{ item.name }</td>
         <td>{ Math.round(item.builds[0].time / 60) } minutes(s)</td>
         <td>{ item.builds[0].error ? 'Fail' : 'Success' }</td>
