@@ -48,9 +48,10 @@
   </div>
   <script type="es6">
     const self = this
-    
+
     self.services = self.tracker.services
     self.critical = self.tracker.critical()
+
     self.isView = function(view) {
       return (self.view || 'oversight') == view
     }

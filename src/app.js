@@ -11,13 +11,15 @@ import './routes'
 // # import our mixin services
 import Localize from './services/localize.js'
 import Tracker from './services/tracker.js'
-// # install localize service as a global mixin
+// # install localize service as a named global mixin
 import localizations from './i18n.json'
-riot.mixin(new Localize(riot, localizations, {
-  default: 'en-US',
-  locales: ['en-US, es-SP']
-}))
-// # install tracker service as global mixin by name
+riot.mixin({
+  localize: new Localize(riot, localizations, {
+    default: 'en-US',
+    locales: ['en-US, es-SP']
+  })
+})
+// # install tracker service as a named global mixin
 riot.mixin({ tracker: new Tracker(riot) })
 // # initialize application
 riot.mount('app')

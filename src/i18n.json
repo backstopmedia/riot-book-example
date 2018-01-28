@@ -1,8 +1,12 @@
 {
   "en-US": {
-    "oversight.updated": "Last Updated"
+    "oversight": {
+      "updated": "Last Updated"
+    }
   },
   "es-SP": {
-    "oversight.updated": "Ultima atualização"
+    "oversight": {
+      "updated": "Ultima atualização"
+    }
   }
 }

@@ -48,23 +48,14 @@ export default class Localize {
   localize(item, locale = null) {
     const self = this
     let stub = self.localizations[locale || self.locale]
-    if (locale) {
-      if (this.options.locales.find(l => l == locale)) {
-        self.trigger('error', {
-          message: `Locale "${ locale }" not recognized`
-        })
-        return self.options.fallback
-      }
-    }
+    if (locale && this.options.locales.find(l => l == locale))
+      throw new Error(`Locale "${ locale }" not recognized`)
     item.split('.').forEach(key => {
       if (stub[key])
         stub = stub[key]
-      else {
-        self.trigger('error', {
-          message: `Provided item "${ item }" could not be localized in locale "${ locale || self.locale }".`
-        })
-        return self.options.fallback
-      }
+      else
+        throw new Error(
+          `Provided item "${ item }" could not be localized in locale "${ locale || self.locale }".`)
     })
     self.trigger('localize', { item, locale: locale || self.locale })
     return stub

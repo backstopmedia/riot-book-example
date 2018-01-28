@@ -3,7 +3,9 @@
     <!-- can be animated -->
     <div class="tile is-parent" if={ updated }
          data-is="animore"
-         mount={{ duration: 1500, translateY: [250, 0] }}>
+         style="opacity: 0"
+         mount={{ duration: 1500, opacity: 1, easing: 'linear' }}
+         update={{ duration: 800, scale: [1, 0, 1] }}>
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
@@ -64,5 +66,8 @@
     import time from '@/mixins/time'
     // # local mixin example
     this.mixin(time)
+    this.on('update', function() {
+      this.updated = new Date().toLocaleString()
+    })
   </script>
 </Oversight>
