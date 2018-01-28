@@ -27,10 +27,10 @@
             </p>
             <ul class="menu-list">
               <li each={ language in languages }>
-                <<a class={ is-active: localize.locale == language.localeKey }
-                    data-is="localize"
-                    item={ language.localeLabel }
-                    click={ () => changeLanguage(language.localeKey) }></a>
+                <a class={ is-active: localize.locale == language.localeKey }
+                   data-is="localize"
+                   item={ language.localeLabel }
+                   click={ () => changeLanguage(language.localeKey) } />
               </li>
             </ul>
             <p class="menu-label">
