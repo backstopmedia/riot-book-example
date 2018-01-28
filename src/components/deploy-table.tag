@@ -30,7 +30,7 @@
         <td>{ item.builds[0].error ? 'Fail' : 'Success' }</td>
         <td><a if={ item.builds[0].error } onclick={ rebuild }>Rebuild</a></td>
       </tr>
-      <tr class="animated fadeInUp" if={ pagination.page.length == 0}>
+      <tr class="animated fadeInUp" if={ pagination.page.length == 0 }>
         <td colspan="3">No services found.</td>
       </tr>
     </tbody>

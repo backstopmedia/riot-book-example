@@ -2,10 +2,10 @@ export default class Tracker {
 
   /**
    * Tracker mixin for aggregating service data.
-   * @param {riot} riot - Riot reference.
+   * @param {riot} instance - Riot reference.
    */
-  constructor(riot) {
-    this.$riot = riot
+  constructor(instance) {
+    this.$riot = instance
     this.$riot.observable(this)
     this._services = []
     this.update()
