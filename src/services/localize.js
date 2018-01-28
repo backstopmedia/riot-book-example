@@ -21,7 +21,7 @@ export default class Localize {
   /**
    * Get or set current locale.
    * @param {String} locale - Locale to use.
-   * @returns {String|null}
+   * @returns {String}
    */
   locale(locale = null) {
     if (locale) {
@@ -35,9 +35,9 @@ export default class Localize {
       window.localStorage.setItem('localization', locale)
       this._locale = locale
       this.trigger('updated')
-    } else {
-      return this._locale
     }
+
+    return this._locale
   }
 
   /**
