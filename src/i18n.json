@@ -13,6 +13,18 @@
         "help": "Help"
       }
     },
+    "home": {
+      "menu": {
+        "admin": "Admin",
+        "languages": "Languages",
+        "tools": "Tools"
+      },
+      "views": {
+        "oversight": "Oversight",
+        "services": "Services",
+        "deployments": "Deployments"
+      }
+    },
     "oversight": {
       "updated": "Last Updated",
       "criticalServices": "Critical Services",
@@ -51,8 +63,20 @@
     "header": {
       "nav": {
         "home": "Inicio",
-        "about": "Acerca de",
+        "about": "De Nosotros",
         "help": "Ayuda"
+      }
+    },
+    "home": {
+      "menu": {
+        "admin": "Administración",
+        "languages": "Idiomas",
+        "tools": "Herramientas"
+      },
+      "views": {
+        "oversight": "Vigilancia",
+        "services": "Servicios",
+        "deployments": "Despliegues"
       }
     },
     "oversight": {

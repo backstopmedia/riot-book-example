@@ -3,28 +3,27 @@
     <div class="column is-2 is-hidden-mobile">
       <sidebar class="animated slideInLeft">
         <aside class="menu">
-          <p class="menu-label">
-            Admin
-          </p>
+          <p class="menu-label" data-is="localize" item="home.menu.admin" />
           <ul class="menu-list">
             <li>
               <a class={ is-active: isView('oversight') }
-                 click={ () => setView('oversight') }>
-                 Oversight</a>
+                 click={ () => setView('oversight') }
+                 data-is="localize"
+                 item="home.views.oversight" />
             </li>
             <li>
               <a class={ is-active: isView('services') }
-                 click={ () => setView('services') }>
-                 Services</a>
+                 click={ () => setView('services') }
+                 data-is="localize"
+                 item="home.views.services" />
             </li>
             <li>
               <a class={ is-active: isView('deployments') }
-                 click={ () => setView('deployments') }>
-                 Deployments</a>
+                 click={ () => setView('deployments') }
+                 data-is="localize"
+                 item="home.views.deployments" />
             </li>
-            <p class="menu-label">
-              Language
-            </p>
+            <p class="menu-label" data-is="localize" item="home.menu.languages" />
             <ul class="menu-list">
               <li each={ language in languages }>
                 <a class={ is-active: localize.locale == language.localeKey }
@@ -33,9 +32,7 @@
                    click={ () => changeLanguage(language.localeKey) } />
               </li>
             </ul>
-            <p class="menu-label">
-              Tools
-            </p>
+            <p class="menu-label" data-is="localize" item="home.menu.tools" />
             <ul class="menu-list">
               <li>
                 <a>Development</a>
