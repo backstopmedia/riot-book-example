@@ -35,7 +35,7 @@ export default class Localize {
       return
     }
     this.trigger('update')
-    window.localeStorage.setItem('localization', locale)
+    window.localStorage.setItem('localization', locale)
     this._locale = locale
     this.trigger('updated')
   }

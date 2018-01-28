@@ -11,8 +11,11 @@
     <div class="navbar-menu">
       <div class="navbar-start">
         <virtual each={route in routes}>
-          <a class="navbar-item is-tab {is-active: route.active}" href='#{ route.name }'>
-            { route.label }
+          <a
+            class="navbar-item is-tab {is-active: route.active}"
+            href='#{ route.name }'
+            data-is="localize"
+            item={ route.item }>
           </a>
         </virtual>
       </div>
@@ -34,17 +37,17 @@
     self.routes = [
       {
         name: '',
-        label: 'Home',
+        item: 'header.nav.home',
         active: false
       },
       {
         name: 'about',
-        label: 'About',
+        item: 'header.nav.about',
         active: false
       },
       {
         name: 'help',
-        label: 'Help',
+        item: 'header.nav.help',
         active: false
       }
     ]

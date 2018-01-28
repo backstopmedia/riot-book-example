@@ -8,30 +8,40 @@
           </p>
           <ul class="menu-list">
             <li>
-              <a class="{is-active: isView('oversight')}"
+              <a class={ is-active: isView('oversight') }
                  click={ () => setView('oversight') }>
                  Oversight</a>
             </li>
             <li>
-              <a class="{is-active: isView('services')}"
+              <a class={ is-active: isView('services') }
                  click={ () => setView('services') }>
                  Services</a>
             </li>
             <li>
-              <a class="{is-active: isView('deployments')}"
+              <a class={ is-active: isView('deployments') }
                  click={ () => setView('deployments') }>
                  Deployments</a>
             </li>
+            <p class="menu-label">
+              Language
+            </p>
+            <ul class="menu-list">
+              <li each={ language in languages }>
+                <<a class={ is-active: localize.locale == language.localeKey }
+                    data-is="localize"
+                    item={ language.localeLabel }
+                    click={ () => changeLanguage(language.localeKey) }></a>
+              </li>
+            </ul>
             <p class="menu-label">
               Tools
             </p>
             <ul class="menu-list">
               <li>
-                <a class="">Development</a>
+                <a>Development</a>
                 <ul>
                   <li>
-                    <button class="button is-primary"
-                            click={ updateServices }>Randomize</button>
+                    <button class="button is-primary" click={ updateServices }>Randomize</button>
                   </li>
                 </ul>
               </li>
@@ -49,6 +59,17 @@
   <script type="es6">
     const self = this
 
+    self.languages = [
+      {
+        'localeKey': 'en-US',
+        'localeLabel': 'locale.languages.english'
+      },
+      {
+        'localeKey': 'es-SP',
+        'localeLabel': 'locale.languages.spanish'
+      }
+    ]
+
     self.services = self.tracker.services
     self.critical = self.tracker.critical()
 
@@ -57,6 +78,9 @@
     }
     self.setView = function(view) {
       self.view = view
+    }
+    self.changeLanguage = function(locale) {
+      self.localize.locale = locale
     }
     self.updateServices = function(e) {
       // # prevent automatic update
