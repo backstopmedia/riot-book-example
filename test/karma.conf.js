@@ -2,15 +2,21 @@ module.exports = function (config) {
   config.set({
     basePath: '',
     browsers: ['Electron'],
-    frameworks: ['mocha', 'chai', 'riot'],
-    files: [
-      '../src/components/*.tag',
-      '*.test.js'
+    frameworks: ['mocha', 'chai'],
+    plugins: [
+      'karma-mocha',
+      'karma-mocha-reporter',
+      'karma-chai',
+      'karma-browserify',
+      'karma-webpack',
+      'karma-electron'
     ],
-    reporters: ['progress'],
-    preprocessors: {
-      '../src/components/*.tag': ['riot']
-    },
+    files: [
+      './mocks.js',
+      './bundle.js',
+      '**/specs/*.test.js'
+    ],
+    reporters: ['progress', 'mocha'],
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,

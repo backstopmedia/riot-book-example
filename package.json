@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node scripts/serve",
     "build": "npm run lint && npm run bundle && npm run test:unit",
-    "bundle": "node_modules/.bin/webpack --config webpack.config.js",
+    "bundle:app": "node_modules/.bin/webpack --config webpack.config.js",
+    "bundle:test": "node_modules/.bin/webpack --config test/webpack.config.test.js",
+    "bundle": "npm run bundle:app && npm run bundle:test",
     "lint:js": "node_modules/.bin/eslint src/**.js",
     "lint:tags": "node_modules/.bin/eslint src/**.tag",
     "lint": "npm run lint:js && npm run lint:tags",
@@ -44,6 +46,7 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "bulma": "^0.6.2",
     "bulmaswatch": "^0.5.2",
@@ -63,8 +66,7 @@
     "karma-coverage": "^1.1.1",
     "karma-electron": "^5.2.2",
     "karma-mocha": "^1.3.0",
-    "karma-riot": "^2.0.0",
-    "karma-webpack": "^2.0.9",
+    "karma-mocha-reporter": "^2.2.5",
     "mocha": "^5.0.0",
     "node-sass": "^4.7.2",
     "raw-loader": "^0.5.1",
@@ -82,5 +84,6 @@
     "webpack-dev-server": "^2.11.0",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-html-plugin": "^0.1.1"
-  }
+  },
+  "dependencies": {}
 }
