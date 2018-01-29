@@ -3,7 +3,7 @@ describe('given a service-card tag', function() {
   beforeEach(function() {
     document.body.appendChild(document.createElement('service-card'))
     riot.mount('service-card', 'servicecard', {
-      service: mock_services[0]
+      service: MOCKS.services[0]
     })
   })
 
@@ -13,7 +13,7 @@ describe('given a service-card tag', function() {
 
   it('should properly display service name', function() {
     var serviceName = document.querySelector('h1')
-    expect(serviceName.textContent).to.equal(mock_services[0].name.toUpperCase())
+    expect(serviceName.textContent).to.equal(MOCKS.services[0].name.toUpperCase())
   })
 
   it('should properly draw a chart on mount and update', function(done) {
