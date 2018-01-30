@@ -80,12 +80,8 @@
       self.localize.locale(locale)
     }
     self.updateServices = function(e) {
-      // # prevent automatic update
-      e.preventUpdate = true
       // # update services
       self.tracker.update()
-      // # manually update home component
-      self.update()
     }
     // # update service data on update
     self.on('update', function() {
