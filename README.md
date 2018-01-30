@@ -35,7 +35,7 @@ docker run --rm -p 8080:8080 dashboard
 
 ## Running Tests
 
-We use Karma with the riot-karma plugin, Mocha, and Electron for testing our components.
+We use Karma, Mocha, and Electron for testing our components.
 
 To lint our code:
 

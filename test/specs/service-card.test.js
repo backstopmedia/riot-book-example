@@ -16,7 +16,7 @@ describe('given a service-card tag', function() {
     expect(serviceName.textContent).to.equal(MOCKS.services[0].name.toUpperCase())
   })
 
-  it('should properly draw a chart on mount and update', function(done) {
+  it('should properly draw a chart on mount', function(done) {
     setInterval(function() {
       if (document.querySelector('.chartjs-size-monitor'))
         done()
