@@ -1,9 +1,10 @@
 import riot from 'riot'
+import placeholder from 'riot-placeholder'
+// # install placeholder plugin
+placeholder(riot)
 import 'riot-animore'
 // # path for es6 tag router - http://riotjs.com/api/route/#tag-based-routing
 import 'riot-route/lib/tag'
-// # could do a regular import but would have to use expose loader on riot
-import 'riot-tag-loader!riot-placeholder/riot-placeholder.tag'
 // # import application assets
 import '@/assets/styles/main.scss'
 import '@/components'
