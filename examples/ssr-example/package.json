@@ -1,0 +1,28 @@
+{
+  "name": "riot-ssr-example",
+  "version": "1.0.0",
+  "description": "A simple example of how to compile and serve Riot pages with server-side rendering.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "riot": "^3.8.1"
+  },
+  "contributors": [
+    {
+      "name": "Joseph Szczesniak",
+      "email": "joseph@aureliuslab.com",
+      "url": "https://github.com/nukapunk"
+    }
+  ],
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.16.0",
+    "eslint-plugin-riot": "^0.1.7"
+  }
+}

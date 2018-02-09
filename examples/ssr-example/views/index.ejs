@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <title><%= title %></title>
+ </head>
+ <body>
+    <%- body %>
+    <script src="https://cdn.jsdelivr.net/npm/riot@3.8.1/riot.min.js"></script>
+    <script src="tags.js"></script>
+    <script>
+      riot.mount('*', <%- JSON.stringify(user) %>)
+    </script>
+ </body>
+</html>
