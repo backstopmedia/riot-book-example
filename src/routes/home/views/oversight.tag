@@ -1,9 +1,13 @@
 <Oversight class="animated fadeIn">
   <div class="container is-fluid">
-    <!-- can be animated -->
+    <!--
+      to make sure our component is hydrated without any update animations
+      provide an empty object to be consumed by animore
+    -->
     <div class="tile is-parent" if={ updated }
          data-is="animore"
-         mount={{ duration: 450, translateY: [-15, 0], easing: 'linear' }}>
+         mount={{ duration: 450, translateY: [-15, 0], easing: 'linear' }}
+         update={{ }}>
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
