@@ -26,7 +26,7 @@
             <p class="menu-label" data-is="localize" item="home.menu.languages" />
             <ul class="menu-list">
               <li each={ language in languages }>
-                <a class={ is-active: localize.locale == language.localeKey }
+                <a class={ is-active: localize.locale() == language.localeKey }
                    data-is="localize"
                    item={ language.localeLabel }
                    click={ () => changeLanguage(language.localeKey) } />

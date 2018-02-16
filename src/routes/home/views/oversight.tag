@@ -3,9 +3,7 @@
     <!-- can be animated -->
     <div class="tile is-parent" if={ updated }
          data-is="animore"
-         style="opacity: 0"
-         mount={{ opacity: 1 }}
-         update={{ duration: 800, scale: [1, 0, 1] }}>
+         mount={{ duration: 450, translateY: [-15, 0], easing: 'linear' }}>
       <article class="tile is-child notification is-primary">
         <div class="content">
           <p class="title">
