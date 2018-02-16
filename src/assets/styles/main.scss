@@ -4,9 +4,6 @@
 @import '~font-awesome/css/font-awesome.min.css';
 @import '~animate.css';
 
-@import './mixins/shadow.scss';
-@import './components/app.scss';
-@import './components/header.scss';
-@import './components/bottom.scss';
-@import './routes/home.scss';
-@import './routes/services.scss';
+@import './mixins/_all.scss';
+@import './components/_all.scss';
+@import './routes/_all.scss';
