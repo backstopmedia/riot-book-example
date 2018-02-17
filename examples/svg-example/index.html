@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <title>riot-svg-example</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.8.1/riot+compiler.min.js"></script>
+ </head>
+ <body>
+  <app />
+  <script type="riot/tag">
+    <app>
+      <chart settings={ settings } />
+
+      let data = [... new Array(10)].map(_ => Math.floor(Math.random() * 100) + 1)
+      const labels = data.map(score => {
+        if (score > 89)
+          return 'A'
+        if (score > 79)
+          return 'B'
+        if (score > 69)
+          return 'C'
+        return 'F'
+      })
+
+      data = data.map(score => {
+        return {
+          d: score,
+          c: score > 69 ? 'green' : 'red'
+        }
+      })
+
+      this.settings = {
+        title: 'Test Scores',
+        data,
+        labels
+      }
+    </app>
+
+    <chart>
+      <h1>{ opts.settings.title || 'Riot Chart' }</h1>
+      <svg class="chart" width="405" height="400" aria-labelledby="title" role="img">
+        <!-- we can use riot expressions within an svg context -->
+        <g class="bar" each={ o, index in opts.settings.data }>
+          <title id="title">{ o.d }</title>
+          <!-- max width is 400 (we added so text doesn't get cut off) -->
+          <!-- because we have a set of 10 items, we multiply 4 times our given data value which is no greater than 100 -->
+          <!-- we can very easily take advantage of riot expressions to create dynamic widgets -->
+          <rect width={ 4 * o.d } height="20" y={ 20 * index } style="fill: { o.c }"></rect>
+          <text x={ o.d * 4 + 10 } dx="0.15em" y={index * 20 + 12} dy=".35em">{ parent.opts.settings.labels[index] }</text>
+        </g>
+      </svg>
+    </chart>
+  </script>
+  <script>
+    riot.mount('app')
+  </script>
+ </body>
+</html>
