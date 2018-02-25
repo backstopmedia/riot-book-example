@@ -2,6 +2,17 @@
 
 A sample DevOps dashboard application for Riot.js.
 
+> Note: There are additional examples within the examples directory by [John Nolette](https://github.com/neetjn) and [Joseph A. Szczesniak](https://github.com/nukapunk).
+
+## Technologies
+
+* Riot 3
+* riot-animore (official anime.js bindings for Riot)
+* Webpack (for bundling)
+* Express (for serving application)
+* Karma / Mocha (testing components)
+* Bulma, Fontawesome, Anime.css (css frameworks for styling)
+
 ## Setting Up
 
 Use the following command to install this project's dependencies:
