@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Riot</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body>
+
+    <stats></stats>
+
+    <script src="stats.tag" type="riot/tag"></script>
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+    <script>
+      // mount the stats tag but also pass in some words and a boolean flag
+      riot.mount('stats', {
+        words: [
+          'the', 'quick', 'brown', 'fox', 'jumped',
+          'over', 'the', 'lazy', 'dog'
+        ],
+        includeY: true
+      })
+    </script>
+  </body>
+</html>
