@@ -29,7 +29,7 @@
                 <a class={ is-active: localize.locale() == language.localeKey }
                    data-is="localize"
                    item={ language.localeLabel }
-                   click={ () => changeLanguage(language.localeKey) } />
+                   click={ changeLocale } />
               </li>
             </ul>
             <p class="menu-label" data-is="localize" item="home.menu.tools" />
@@ -76,8 +76,9 @@
     self.setView = function(view) {
       self.view = view
     }
-    self.changeLanguage = function(locale) {
-      self.localize.locale(locale)
+    self.changeLocale = function(e) {
+      // # we can access the item from the each loop
+      self.localize.locale(e.item.language.localeKey)
     }
     self.updateServices = function(e) {
       // # update services
