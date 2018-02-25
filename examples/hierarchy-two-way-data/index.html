@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Riot</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body>
+
+    <parent></parent>
+
+    <script src="parent.tag" type="riot/tag"></script>
+    <script src="child.tag" type="riot/tag"></script>
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+    <script>
+      riot.mount('parent', {
+        children: [
+          {name: 'Alice', favorite_color: 'red'},
+          {name: 'Bob', favorite_color: 'blue'},
+          {name: 'Carol', favorite_color: 'orange'}
+        ],
+        food_options: [
+          {name: 'apple', color: 'red'},
+          {name: 'blueberry', color: 'blue'},
+          {name: 'blackberry', color: 'blue'},
+          {name: 'carrot', color: 'orange'},
+          {name: 'orange', color: 'orange'},
+          {name: 'strawberry', color: 'red'},
+          {name: 'tomato', color: 'red'}
+        ]
+      })
+    </script>
+  </body>
+</html>
+

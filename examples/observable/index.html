@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Riot</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body>
+
+    <app></app>
+
+    <script src="app.tag" type="riot/tag"></script>
+    <script src="header.tag" type="riot/tag"></script>
+    <script src="usernameform.tag" type="riot/tag"></script>
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+    <script>
+      var api = {
+        _username: 'riotfan',
+        _loggedIn: true,
+
+        isLoggedIn: function() {
+          return !!this._loggedIn
+        },
+
+        getUsername: function() {
+          return this._username
+        },
+
+        changeUsername: function(newUsername) {
+          this._username = newUsername
+          this._loggedIn = true
+
+          // notify any listeners that the username has changed
+          this.trigger('username-updated', this._username)
+        },
+        logout: function() {
+          this._username = ''
+          this._loggedIn = false
+
+          this.trigger('logged-out')
+        }
+      }
+      riot.observable(api)
+
+      riot.mount('app', {api: api})
+    </script>
+  </body>
+</html>
+

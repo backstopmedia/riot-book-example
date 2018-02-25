@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Riot</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body>
+
+    <stats id="stats1"></stats>
+    <stats id="stats2"></stats>
+
+    <script src="stats.tag" type="riot/tag"></script>
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+    <script>
+      // mount the tags by ID so they get their own data
+      riot.mount('#stats1', {
+        words: [
+          'the', 'quick', 'brown', 'fox', 'jumped',
+          'over', 'the', 'lazy', 'dog'
+        ],
+        includeY: true
+      })
+
+      // mount the tags by ID so they get their own data
+      riot.mount('#stats2', {
+        words: [
+          'rem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur',
+          'adipiscing', 'elit,', 'sed', 'do', 'eiusmod', 'tempor',
+          'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua'
+        ],
+        includeY: true
+      })
+    </script>
+  </body>
+</html>
+
