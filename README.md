@@ -2,9 +2,7 @@
 
 A sample DevOps dashboard application for Riot.js.
 
-> **Note**: There are additional examples within the examples directory by [John Nolette](https://github.com/neetjn) and [Joseph A. Szczesniak](https://github.com/nukapunk).
-> - [**Server Sided Rendering**](https://github.com/backstopmedia/riot-book-example/tree/master/examples/ssr-example)
-> - [**SVG**](https://github.com/backstopmedia/riot-book-example/tree/master/examples/svg-example)
+> **Note**: There are additional examples within the examples directory by [John Nolette](https://github.com/neetjn), [Joseph A. Szczesniak](https://github.com/nukapunk), and [Collin Green](https://github.com/collingreen).
 
 ## Technologies
 
