@@ -1,4 +1,10 @@
-# riot-book-example
+# Building Apps with Riot
+
+![Riot](https://images-na.ssl-images-amazon.com/images/I/514REfwoOmL.jpg)
+
+This repo contains sample code for the book, "Building Apps with Riot," by [Bleeding Edge Press](https://bleedingedgepress.com). This book provides an outlook on developing websites, web applications, and web components with the Riot framework. Throughout the course of this book you will learn all of the essential aspects of Riot necessary to start hacking away. The book can be purchased [here](https://bleedingedgepress.com/building-apps-with-riot/).
+
+## riot-book-example
 
 A sample DevOps dashboard application for Riot.js.
 
