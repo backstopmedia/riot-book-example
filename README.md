@@ -21,6 +21,8 @@ A sample DevOps dashboard application for Riot.js.
 
 ## Setting Up
 
+> **Warning**: This project was built with Node.js 8 & 10, installing dependencies and or building any bundles may fail using unsupported versions.
+
 Use the following command to install this project's dependencies:
 
 ```bash
@@ -74,4 +76,4 @@ npm test
 
 ---
 
-Copyright (c) 2017 John Nolette, Bleeding Edge Press Licensed under the MIT license.
+Copyright (c) 2019 John Nolette, Bleeding Edge Press Licensed under the MIT license.
