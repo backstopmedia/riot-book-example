@@ -68,7 +68,7 @@
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.5",
     "mocha": "^5.0.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^7.0.0",
     "raw-loader": "^0.5.1",
     "riot": "^3.8.1",
     "riot-animore": "^1.0.0",
