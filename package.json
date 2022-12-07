@@ -57,7 +57,7 @@
     "eslint": "4.1.1",
     "eslint-loader": "1.6.1",
     "eslint-plugin-riot": "0.1.7",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "file-loader": "^1.1.6",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",
